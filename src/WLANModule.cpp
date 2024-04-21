@@ -1,5 +1,7 @@
 #include "WLANModule.h"
+#ifdef ARDUINO_ARCH_ESP32
 #include <Preferences.h>
+#endif
 
 WLANModule::WLANModule()
 {
