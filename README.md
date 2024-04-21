@@ -1,10 +1,47 @@
-# OpenKNX Dummy Applikation
+# OpenKNX InternetServices Applikation
 
-Kann in der ETS als Dummy verwendet werden. Mit eigener Applikationsbeschreibung, wie immer in doc/Applikationsbeschreibung-Dummy.md.
+Die Anwendung stellt Daten aus dem Internet auf dem KNX Bus zur Verfügung.
 
-Erlaubt variable Anzahl von Kommunikationsobjekten. Kann sowohl einer TP- wie auf einer IP-Linie zugeordnet werden. Existiert in 2 Varianten: 
+Derzeit implementierte Dienste:
 
-* Das normale Release mit bis zu 99 Kommunikationsobjekten
-* Als Big mit bis zu 999 Kommunikationsobjekten
+- Internet Wetter
 
+Geplante künftige Dienste:
+
+- NTP (Zeitserver) (über das Networkmodule)
+- SIP (Telefonanruf über SIP-Dienst)
+
+## Hardware Unterstützung
+
+- [OpenKNX Reg1-ETH V1](https://github.com/OpenKNX/OpenKNX/wiki/REG1-Eth)
+- Adafruit ESP32 DevKitC V4 
+- Adafruit ESP32 Feather V2
+
+## Build
+
+Derzeit wird das Build über die Power-Shell Skripte nicht unterstüzt und es gibt auch keine offizielles Release.
+
+### .knxprod Datei
+
+Für RP2040 Hardware im Directory src ausführen:
+```
+openknxproducer create InternetServicesRP2040-Dev.xml -d -h ../include/knxprodRP2040.h
+```
+
+Für ESP32 Hardware im Directory src ausführen:
+```
+openknxproducer create InternetServicesESP32-Dev.xml -d -h ../include/knxprodESP32.h
+```
+
+### Firmware
+
+Das Build muss manuell im VS-Code erzeugt werden. 
+Dazu die entsprechende Konfiguration mit `_USB`-Endung auswählen und in PlatformIO über `Upload and Monitor` auf die Hardware laden.
+
+Derzeit gibt es noch Probleme beim Bauen der ESP32 Firmware. 
+Das OFM-UsbExchange und OFM-FileTransferModule muss aus dem Lib Ordner entfernt werden.
+
+## Lizenz
+
+[GNU GPL v3](LICENSE)
 
