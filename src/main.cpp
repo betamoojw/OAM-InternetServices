@@ -1,6 +1,6 @@
 #include "OpenKNX.h"
 //#include "Logic.h"
-#include "InternetWheaterModule.h"
+#include "InternetWeatherModule.h"
 #ifdef WLAN_WifiSSID  
 #include "WLANModule.h"
 #endif
@@ -35,8 +35,8 @@ void setup()
 #ifdef NET_ModuleVersion
     openknx.addModule(1, openknxNetwork);
 #endif    
-//    openknx.addModule(2, openknxLogic);
-    openknx.addModule(3, openknxInternetWheaterModule);
+    openknx.addModule(2, openknxLogic);
+    openknx.addModule(3, openknxInternetWeatherModule);
 // #ifdef ARDUINO_ARCH_ESP32    
 //     openknx.addModule(4, openknxOTAUpdateModule);
 // #endif
