@@ -4,8 +4,8 @@
   <op:ETS
     OpenKnxId="0xAE"
     ApplicationNumber="0x2F"
-    ApplicationVersion="10"
-    ReplacesVersions="0 1 2 3 4 5 6 7 8 9"
+    ApplicationVersion="12"
+    ReplacesVersions="0 1 2 3 4 5 6 7 8 9 10 11"
     ApplicationRevision="0"
     ProductName="Internet Dienste (WLAN)"
     BusCurrent="30"
@@ -28,12 +28,12 @@
     KoSingleOffset="20" />
 
   <op:define prefix="IW" ModuleType="21"
-    share=   "../lib/OFM-InternetWheaterModule/src/InternetWheaterModule.share.xml"
-    template="../lib/OFM-InternetWheaterModule/src/InternetWheaterModule.templ.xml"
+    share=   "../lib/OFM-InternetWeatherModule/src/InternetWeatherModule.share.xml"
+    template="../lib/OFM-InternetWeatherModule/src/InternetWeatherModule.templ.xml"
     NumChannels="5"
     KoSingleOffset="400"
     KoOffset="410">
-    <op:verify File="../lib/OFM-InternetWheaterModule/library.json" ModuleVersion="0" /> 
+    <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="0.1" /> 
   </op:define>
 
   <op:define prefix="LOG" ModuleType="10"

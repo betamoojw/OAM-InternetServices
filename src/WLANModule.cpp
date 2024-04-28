@@ -38,54 +38,48 @@ bool WLANModule::processCommand(const std::string cmd, bool diagnoseKo)
     {
         if (!wlanConfigured)
         {
-            Serial.println();
-            Serial.println("WiFi configuration missing");
+            logInfoP("WiFi configuration missing");
             return true;
         }
         auto state = WiFi.status();
-        Serial.println();
-        Serial.print("State: ");
         switch(state)
         {
             case WL_NO_SHIELD:
-                Serial.println("no shield");
+                logInfoP("State: no shield");
                 break;
             case WL_IDLE_STATUS:
-                Serial.println("idle");
+                logInfoP("State: idle");
                 break;
             case WL_NO_SSID_AVAIL:
-                Serial.println("no ssid available");
+                logInfoP("State: no ssid available");
                 break;
             case WL_SCAN_COMPLETED:
-                Serial.println("scan complete");
+                logInfoP("State: scan complete");
                 break;
             case WL_CONNECTED:
-                Serial.println("connected");
+                logInfoP("State: connected");
                 break;
             case WL_CONNECT_FAILED:
-                Serial.println("connection failed");
+                logInfoP("State: connection failed");
                 break;
             case WL_CONNECTION_LOST:
-                Serial.println("connection lost");
+                logInfoP("State: connection lost");
                 break;
             case WL_DISCONNECTED:
-                Serial.println("disconnected");
+                logInfoP("State: disconnected");
                 break;
             default:
-                Serial.println("unknown");
+                logInfoP("State: unknown");
                 break;
         }
         if (usingSavedConfiguration)
-            Serial.print("SSID (KNX config missing, using fallback from flash): ");
+            logInfoP("SSID (KNX config missing, using fallback from flash): {%s}", WiFi.SSID().c_str());
         else
-            Serial.print("SSID: ");
-        Serial.println(WiFi.SSID());
+            logInfoP("SSID: {%s}", WiFi.SSID().c_str());
         if (state == WL_CONNECTED)
         {
-            Serial.print("IP: ");
-            Serial.println(WiFi.localIP());
-            Serial.print("Gateway-IP: ");
-            Serial.println(WiFi.gatewayIP());
+            logInfoP("IP: {%s}", WiFi.localIP().toString().c_str());
+            logInfoP("Gateway-IP: {%s}", WiFi.localIP().toString().c_str());
         }
         return true;
     }

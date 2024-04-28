@@ -3,14 +3,14 @@
 <KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
   <op:ETS
     OpenKnxId="0xAE"
-    ApplicationNumber="0x2D"
-    ApplicationVersion="12"
-    ReplacesVersions="0 1 2 3 4 5 6 7 8 9 10 11"
+    ApplicationNumber="0x2E"
+    ApplicationVersion="2"
+    ReplacesVersions="1"
     ApplicationRevision="0"
     ProductName="Internet Dienste"
     BusCurrent="30"
-    BuildSuffix="-Dev"
-    BuildSuffixText=" (Dev)"
+    BuildSuffix="-Beta"
+    BuildSuffixText=" (Beta)"
     OrderNumber="MGKnxINET" />
 
   <op:define prefix="BASE" ModuleType="10"
