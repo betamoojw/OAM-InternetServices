@@ -1,11 +1,8 @@
 #include "OpenKNX.h"
 //#include "Logic.h"
 #include "InternetWeatherModule.h"
-#ifdef WLAN_WifiSSID  
-#include "WLANModule.h"
-#endif
 #ifdef ARDUINO_ARCH_ESP32
-// #include "OTAUpdateModule.h"
+#include "WLANModule.h"
 #include "SIPModule.h"
 #endif
 
