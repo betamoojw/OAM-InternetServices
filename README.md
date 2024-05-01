@@ -5,11 +5,11 @@ Die Anwendung stellt Daten aus dem Internet auf dem KNX Bus zur Verfügung.
 Derzeit implementierte Dienste:
 
 - Internet Wetter
+- SIP Client (Telefonanruf) (Nur auf ESP32 HW)
 
 Geplante künftige Dienste:
 
 - NTP (Zeitserver) (über das Networkmodule)
-- SIP (Telefonanruf über SIP-Dienst)
 
 ## Hardware Unterstützung
 
