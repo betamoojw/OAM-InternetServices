@@ -1,12 +1,11 @@
 #include "OpenKNX.h"
 //#include "Logic.h"
 #include "InternetWeatherModule.h"
-#ifdef WLAN_WifiSSID  
+#ifdef ARDUINO_ARCH_ESP32
 #include "WLANModule.h"
+#include "SIPModule.h"
 #endif
-// #ifdef ARDUINO_ARCH_ESP32
-// #include "OTAUpdateModule.h"
-// #endif
+
 #ifdef NET_ModuleVersion
 #include "NetworkModule.h"
 #endif
@@ -25,6 +24,8 @@ AutoConnectConfig config;
 
 #include "HTTPClient.h"
 
+
+
 void setup()
 {
     const uint8_t firmwareRevision = 1;
@@ -37,9 +38,10 @@ void setup()
 #endif    
   openknx.addModule(2, openknxLogic);
   openknx.addModule(3, openknxInternetWeatherModule);
-// #ifdef ARDUINO_ARCH_ESP32    
+#ifdef ARDUINO_ARCH_ESP32    
  //   openknx.addModule(4, openknxOTAUpdateModule);
-// #endif
+ openknx.addModule(7, openknxSIPModule);
+#endif
 #ifdef ARDUINO_ARCH_RP2040
     openknx.addModule(5, openknxUsbExchangeModule);
     openknx.addModule(6, openknxFileTransferModule);
