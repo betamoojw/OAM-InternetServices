@@ -3,9 +3,9 @@
 #include "InternetWeatherModule.h"
 #ifdef ARDUINO_ARCH_ESP32
 #include "WLANModule.h"
-#include "SIPModule.h"
-#endif
 
+#endif
+#include "SIPModule.h"
 #ifdef NET_ModuleVersion
 #include "NetworkModule.h"
 #endif
