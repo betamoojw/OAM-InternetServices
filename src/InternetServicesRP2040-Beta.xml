@@ -36,14 +36,14 @@
     <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="0.1" /> 
   </op:define>
 
-  <!-- <op:define prefix="SIP" ModuleType="22"
+  <op:define prefix="SIP" ModuleType="22"
     share=   "../lib/OFM-SIPClientModule/src/SIPClientModule.share.xml"
     template="../lib/OFM-SIPClientModule/src/SIPClientModule.templ.xml"
     NumChannels="5"
     KoSingleOffset="985"
     KoOffset="980">
     <op:verify File="../lib/OFM-SIPClientModule/library.json" ModuleVersion="0" /> 
-  </op:define> -->
+  </op:define>
 
   <op:define prefix="LOG" ModuleType="10"
     share="../lib/OFM-LogicModule/src/Logikmodul.share.xml"

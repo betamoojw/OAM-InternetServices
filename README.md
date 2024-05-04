@@ -5,7 +5,7 @@ Die Anwendung stellt Daten aus dem Internet auf dem KNX Bus zur Verfügung.
 Derzeit implementierte Dienste:
 
 - Internet Wetter
-- SIP Client (Telefonanruf) (Nur auf ESP32 HW)
+- SIP Client (Telefonanruf) (Bisher nur auf ESP32 Hardware getestet)
 
 Geplante künftige Dienste:
 
@@ -23,14 +23,14 @@ Derzeit wird das Build über die Power-Shell Skripte nicht unterstüzt und es gi
 
 ### .knxprod Datei
 
-Für RP2040 Hardware im Directory src ausführen:
+Für RP2040 Hardware im Directory src ausführen (Bei Bedarf "-DEV" durch "-Beta" ersetzten):
 ```
-openknxproducer create InternetServicesRP2040-Dev.xml -d -h ../include/knxprodRP2040.h
+openknxproducer create InternetServicesRP2040-Dev.xml -d -h ../include/knxprodRP2040-Dev.h
 ```
 
 Für ESP32 Hardware im Directory src ausführen:
 ```
-openknxproducer create InternetServicesESP32-Dev.xml -d -h ../include/knxprodESP32.h
+openknxproducer create InternetServicesESP32-Dev.xml -d -h ../include/knxprodESP32-Dev.h
 ```
 
 ### Firmware
