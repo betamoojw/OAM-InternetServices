@@ -531,14 +531,19 @@
 // 
 #define KoIW_CHHour2Clouds                       (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour2Clouds)))
 
-#define SIP_UseIPGateway                        299      // 1 Bit, Bit 7
-#define     SIP_UseIPGatewayMask 0x80
-#define     SIP_UseIPGatewayShift 7
+#define SIP_SIPClientActive                     299      // 1 Bit, Bit 7
+#define     SIP_SIPClientActiveMask 0x80
+#define     SIP_SIPClientActiveShift 7
+#define SIP_UseIPGateway                        299      // 1 Bit, Bit 6
+#define     SIP_UseIPGatewayMask 0x40
+#define     SIP_UseIPGatewayShift 6
 #define SIP_SIPGatewayIP                        300      // IP address, 4 Byte
 #define SIP_SIPGatewayPort                      304      // uint16_t
 #define SIP_SIPUser                             306      // char*, 30 Byte
 #define SIP_SIPPassword                         337      // char*, 30 Byte
 
+// SIP Client Aktiviert
+#define ParamSIP_SIPClientActive                     ((bool)(knx.paramByte(SIP_SIPClientActive) & SIP_SIPClientActiveMask))
 // IP Gateway ist SIP Gateway (z.B. FRITZ!Box)
 #define ParamSIP_UseIPGateway                        ((bool)(knx.paramByte(SIP_UseIPGateway) & SIP_UseIPGatewayMask))
 // SIP Gateway IP
