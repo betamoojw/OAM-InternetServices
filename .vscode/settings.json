@@ -47,7 +47,12 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "chrono": "cpp",
+        "ratio": "cpp",
+        "istream": "cpp",
+        "sstream": "cpp",
+        "cerrno": "cpp"
     },
     "cmake.configureOnOpen": false
 }
