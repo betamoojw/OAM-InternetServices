@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
+  <op:ETS
+    OpenKnxId="0xAE"
+    ApplicationNumber="0x30"
+    ApplicationVersion="3"
+    ReplacesVersions="1 2"
+    ApplicationRevision="0"
+    ProductName="Internet Dienste (WLAN)"
+    BusCurrent="30"
+    BuildSuffix="-Beta"
+    BuildSuffixText=" (Beta)"
+    OrderNumber="MGKnxINET" />
+
+  <op:define prefix="BASE" ModuleType="10"
+    share="../lib/OGM-Common/src/Common.share.xml">
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="17" /> 
+  </op:define>
+
+  <!-- <op:define prefix="NET" ModuleType="11" 
+    share="../lib/OFM-Network/src/Network.share.xml">
+    <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="2" /> 
+  </op:define> -->
+
+  <op:define prefix="WLAN" ModuleType="12" 
+    share="WLAN.share.xml"
+    KoSingleOffset="20" />
+
+  <op:define prefix="IW" ModuleType="21"
+    share=   "../lib/OFM-InternetWeatherModule/src/InternetWeatherModule.share.xml"
+    template="../lib/OFM-InternetWeatherModule/src/InternetWeatherModule.templ.xml"
+    NumChannels="5"
+    KoSingleOffset="400"
+    KoOffset="410">
+    <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="0.1" /> 
+  </op:define>
+
+  <op:define prefix="SIP" ModuleType="22"
+    share=   "../lib/OFM-SIPClientModule/src/SIPClientModule.share.xml"
+    template="../lib/OFM-SIPClientModule/src/SIPClientModule.templ.xml"
+    NumChannels="5"
+    KoSingleOffset="985"
+    KoOffset="980">
+    <op:verify File="../lib/OFM-SIPClientModule/library.json" ModuleVersion="0" /> 
+  </op:define>
+
+  <op:define prefix="LOG" ModuleType="10"
+    share="../lib/OFM-LogicModule/src/Logikmodul.share.xml"
+    template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
+    NumChannels="40" 
+    KoOffset="100">
+    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="49" /> 
+  </op:define>
+
+  <generate />
+</KNX>
