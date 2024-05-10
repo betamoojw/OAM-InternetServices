@@ -24,8 +24,10 @@
   </op:define> -->
 
   <op:define prefix="WLAN" ModuleType="12" 
-    share="WLAN.share.xml"
-    KoSingleOffset="20" />
+    share="../lib/OFM-WLANModule/src/WLAN.share.xml"
+    KoSingleOffset="20">
+    <op:verify File="../lib/OFM-WLANModule/library.json" ModuleVersion="0" /> 
+   </op:define>
 
   <op:define prefix="IW" ModuleType="21"
     share=   "../lib/OFM-InternetWeatherModule/src/InternetWeatherModule.share.xml"
