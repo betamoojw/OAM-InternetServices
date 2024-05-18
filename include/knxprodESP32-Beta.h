@@ -9,8 +9,8 @@
                                          (time & 0x3FFF) * 3600000 ) : 0 )
                                              
 #define MAIN_OpenKnxId 0xAE
-#define MAIN_ApplicationNumber 47
-#define MAIN_ApplicationVersion 13
+#define MAIN_ApplicationNumber 48
+#define MAIN_ApplicationVersion 3
 #define MAIN_ParameterSize 3906
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
@@ -2511,6 +2511,4 @@
 #define BASE_KommentarModuleParamSize 0
 #define BASE_KommentarModuleParamOffset 3906
 #define BASE_KommentarModuleCalcIndex(index, m1) (index + BASE_KommentarModuleParamOffset + _channelIndex * BASE_KommentarModuleCount * BASE_KommentarModuleParamSize + m1 * BASE_KommentarModuleParamSize)
-
-
 
