@@ -4,8 +4,8 @@
   <op:ETS
     OpenKnxId="0xAE"
     ApplicationNumber="0x2D"
-    ApplicationVersion="14"
-    ReplacesVersions="0 1 2 3 4 5 6 7 8 9 10 11 12 13"
+    ApplicationVersion="15"
+    ReplacesVersions="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14"
     ApplicationRevision="0"
     ProductName="Internet Dienste"
     BusCurrent="30"
@@ -47,7 +47,7 @@
     NumChannels="5"
     KoSingleOffset="985"
     KoOffset="980">
-    <op:verify File="../lib/OFM-SIPClientModule/library.json" ModuleVersion="0.1" />
+    <op:verify File="../lib/OFM-SIPClientModule/library.json" ModuleVersion="0.2" />
   </op:define>
 
   <op:define prefix="LOG" ModuleType="10"

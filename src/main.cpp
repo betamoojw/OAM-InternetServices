@@ -37,7 +37,7 @@ void setup()
     openknx.addModule(1, openknxNetwork);
 #endif    
     openknx.addModule(2, openknxLogic);
-    openknx.addModule(3, openknxInternetWeatherModule);
+ //   openknx.addModule(3, openknxInternetWeatherModule);
 #ifdef ARDUINO_ARCH_ESP32    
     openknx.addModule(4, openknxOTAUpdateModule);
 

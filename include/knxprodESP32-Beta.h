@@ -10,7 +10,7 @@
                                              
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 48
-#define MAIN_ApplicationVersion 4
+#define MAIN_ApplicationVersion 5
 #define MAIN_ParameterSize 3908
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
@@ -18,7 +18,7 @@
 #define WLAN_ModuleVersion 0
 #define UCT_ModuleVersion 1
 #define IW_ModuleVersion 1
-#define SIP_ModuleVersion 1
+#define SIP_ModuleVersion 2
 #define LOG_ModuleVersion 49
 // Parameter with single occurrence
 
@@ -543,7 +543,7 @@
 #define     SIP_UseIPGatewayShift 7
 #define SIP_SIPGatewayIP                        302      // IP address, 4 Byte
 #define SIP_SIPGatewayPort                      306      // uint16_t
-#define SIP_SIPUser                             307      // char*, 30 Byte
+#define SIP_SIPUser                             308      // char*, 30 Byte
 #define SIP_SIPPassword                         339      // char*, 30 Byte
 
 // Verfügbare Kanäle
