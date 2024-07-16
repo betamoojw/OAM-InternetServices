@@ -1,11 +1,10 @@
 #include "OpenKNX.h"
-//#include "Logic.h"
-#include "InternetWeatherModule.h"
+
 #ifdef ARDUINO_ARCH_ESP32
 #include "WLANModule.h"
 #include "OTAUpdateModule.h"
 #endif
-#include "SIPModule.h"
+
 #ifdef NET_ModuleVersion
 #include "NetworkModule.h"
 #endif
@@ -14,6 +13,8 @@
 #include "FileTransferModule.h"
 #endif
 #include "Logic.h"
+#include "InternetWeatherModule.h"
+#include "SIPModule.h"
 #ifdef USE_AUTO_CONNECT
 #include <AutoConnect.h>
 #include <WebServer.h>
