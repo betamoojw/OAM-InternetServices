@@ -47,7 +47,8 @@ void setup()
     openknx.addModule(5, openknxUsbExchangeModule);
     openknx.addModule(6, openknxFileTransferModule);
 #endif
-    openknx.addModule(7, openknxSIPModule);
+    openknx.addModule(7, openknxInternetWeatherModule);
+    openknx.addModule(8, openknxSIPModule);
     openknx.setup();
 #ifdef USE_AUTO_CONNECT
     config.apid ="OpenKNX";
