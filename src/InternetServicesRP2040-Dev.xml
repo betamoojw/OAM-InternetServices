@@ -20,7 +20,7 @@
 
   <op:define prefix="NET" ModuleType="11"
     share="../lib/OFM-Network/src/Network.share.xml">
-    <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="2" />
+    <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="0.3" />
   </op:define>
 
   <!-- <op:define prefix="WLAN" ModuleType="12" 
@@ -55,7 +55,7 @@
     template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
     NumChannels="40"
     KoOffset="100">
-    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="49" />
+    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.3" />
   </op:define>
 
   <generate />
