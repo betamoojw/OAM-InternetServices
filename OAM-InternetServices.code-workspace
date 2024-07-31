@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../OFM-InternetWeatherModule"
+		},
+		{
+			"path": "../OFM-SIPClientModule"
+		},
+		{
+			"path": "../OFM-Network"
+		},
+		{
+			"path": "../OFM-WLANModule"
+		},
+	],
+	"settings": {
+		"cSpell.language": "en,de,de-DE",
+		"C_Cpp.autoAddFileAssociations": false,
+		"files.associations": {
+			"new": "cpp"
+		},
+		"workbench.colorCustomizations": {
+			"titleBar.background": "#000",
+			"titleBar.border": "#ccf",
+			"titleBar.activeBackground": "#ccf",
+			"titleBar.activeForeground": "#000",
+			"statusBar.background": "#ccf",
+			"statusBar.foreground": "#000",
+			"activityBar.background": "#99c",
+			"activityBar.activeBackground": "#ccf",
+			"activityBar.activeForeground": "#000",
+		}
+	}
+}
