@@ -4,8 +4,8 @@ Die Anwendung stellt Daten aus dem Internet auf dem KNX Bus zur Verfügung.
 
 Derzeit implementierte Dienste:
 
-- Internet Wetter
-- SIP Client (Telefonanruf)
+- [OFM-InternetWeatherModule](https://github.com/OpenKNX/OFM-InternetWeatherModule) - Bereitstellung von Wetterdaten aus dem Internet
+- [OFM-SIPClientModule](https://github.com/OpenKNX/OFM-SIPClientModule) - Auslösen von Telefonanrufen (ohne Sprachverbindung)
 
 Geplante künftige Dienste:
 
