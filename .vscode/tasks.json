@@ -70,18 +70,6 @@
             "group": "build",
             "problemMatcher": []
         },
-        /*
-        {
-            "label": "Develop: RP2040 PiPico_BCU_Connector",
-            "type": "shell",
-            "command": "scripts/OpenKNX-Build.ps1",
-            "args": [
-                "develop_PiPico_BCU_Connector"
-            ],
-            "group": "build",
-            "problemMatcher": []
-        },
-        */
         {
             "label": "Develop: Adafruit_Feather_ESP32_V2",
             "type": "shell",
@@ -103,19 +91,6 @@
             "group": "build",
             "problemMatcher": []
         },
-        /*
-        {
-            "label": "Adafruit_Feather_ESP32_V2 (JLINK)",
-            "type": "shell",
-            "command": "scripts/OpenKNX-Build.ps1",
-            "args": [
-                "develop_Adafruit_Feather_ESP32_V2_JLINK",
-                "upload"
-            ],
-            "group": "build",
-            "problemMatcher": []
-        },
-        */        
         {
             "label": "Build-DEV-Release",
             "type": "shell",
