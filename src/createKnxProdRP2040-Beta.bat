@@ -1,1 +1,0 @@
-openknxproducer create InternetServicesRP2040-Beta.xml -h ../include/knxprodRP2040-Beta.h -o InternetServicesRP2040-Beta.knxprod -debug

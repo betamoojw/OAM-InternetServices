@@ -13,12 +13,12 @@
         {
             "label": "OpenKNXproducer (RP2040 DEV)",
             "type": "shell",
-            "command": "~/bin/OpenKNXproducer.exe",
+            "command": "OpenKNXproducer",
             "args": [
                 "create",
                 "--Debug",
                 "-h",
-                "include/knxprod.h",
+                "include/knxprodRP2040-Dev.h",
                 "src/InternetServicesRP2040-Dev"
             ],
             "problemMatcher": [],
@@ -27,12 +27,12 @@
         {
             "label": "OpenKNXproducer (ESP32 DEV)",
             "type": "shell",
-            "command": "~/bin/OpenKNXproducer.exe",
+            "command": "OpenKNXproducer",
             "args": [
                 "create",
                 "--Debug",
                 "-h",
-                "include/knxprod.h",
+                "include/knxprodESP32-Dev.h",
                 "src/InternetServicesESP32-Dev"
             ],
             "problemMatcher": [],
