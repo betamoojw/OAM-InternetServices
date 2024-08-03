@@ -29,7 +29,7 @@
 
     <op:define prefix="UCT" share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
     ModuleType="13">
-    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="0.1" />
+    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="0.2" />
   </op:define>
 
   <op:define prefix="IW" ModuleType="21"
