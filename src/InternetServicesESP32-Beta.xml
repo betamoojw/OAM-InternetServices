@@ -40,7 +40,7 @@
     NumChannels="5"
     KoSingleOffset="400"
     KoOffset="410">
-    <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="0.1" /> 
+    <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="0.2" /> 
     </op:define>
 
   <op:define prefix="SIP" ModuleType="22"
