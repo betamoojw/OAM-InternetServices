@@ -1,1 +1,0 @@
-openknxproducer create InternetServicesESP32-Beta.xml -h ../include/knxprodESP32-Beta.h -o InternetServicesESP32-Beta.knxprod -debug

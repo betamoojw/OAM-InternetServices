@@ -10,14 +10,14 @@
                                              
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 45
-#define MAIN_ApplicationVersion 15
+#define MAIN_ApplicationVersion 17
 #define MAIN_ParameterSize 6807
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
 #define BASE_ModuleVersion 18
 #define NET_ModuleVersion 3
-#define UCT_ModuleVersion 1
-#define IW_ModuleVersion 1
+#define UCT_ModuleVersion 2
+#define IW_ModuleVersion 2
 #define SIP_ModuleVersion 2
 #define LOG_ModuleVersion 51
 // Parameter with single occurrence
