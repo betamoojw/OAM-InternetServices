@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
+  
+  <op:config href="InternetServices.conf.xml" />
+  
   <op:ETS
     OpenKnxId="0xAE"
     ApplicationNumber="0x30"
-    ApplicationVersion="5"
-    ReplacesVersions="1 2 3 4"
+    ApplicationVersion="0.6"
+    ReplacesVersions="0.1 0.2 0.3 0.4 0.5"
     ApplicationRevision="0"
     ProductName="Internet Dienste (WLAN)"
     BusCurrent="30"
@@ -15,23 +18,23 @@
 
   <op:define prefix="BASE" ModuleType="10"
     share="../lib/OGM-Common/src/Common.share.xml">
-    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="1.2" /> 
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" /> 
   </op:define>
 
   <!-- <op:define prefix="NET" ModuleType="11" 
     share="../lib/OFM-Network/src/Network.share.xml">
-    <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="2" /> 
+    <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="%NET_VerifyVersion%" /> 
   </op:define> -->
 
   <op:define prefix="WLAN" ModuleType="12" 
     share="../lib/OFM-WLANModule/src/WLAN.share.xml"
     KoSingleOffset="20">
-    <op:verify File="../lib/OFM-WLANModule/library.json" ModuleVersion="0" /> 
+    <op:verify File="../lib/OFM-WLANModule/library.json" ModuleVersion="%WLAN_VerifyVersion%" /> 
    </op:define>
 
    <op:define prefix="UCT" share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
     ModuleType="13">
-    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="0.1" />
+    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="%UCT_VerifyVersion%" />
   </op:define>
 
   <op:define prefix="IW" ModuleType="21"
@@ -40,7 +43,7 @@
     NumChannels="5"
     KoSingleOffset="400"
     KoOffset="410">
-    <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="0.2" /> 
+    <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="%IW_VerifyVersion%" /> 
     </op:define>
 
   <op:define prefix="SIP" ModuleType="22"
@@ -49,7 +52,7 @@
     NumChannels="5"
     KoSingleOffset="985"
     KoOffset="980">
-    <op:verify File="../lib/OFM-SIPClientModule/library.json" ModuleVersion="0.2" />
+    <op:verify File="../lib/OFM-SIPClientModule/library.json" ModuleVersion="%SIP_VerifyVersion%" />
     </op:define>
 
   <op:define prefix="LOG" ModuleType="10"
@@ -57,7 +60,7 @@
     template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
     NumChannels="40"
     KoOffset="100">
-    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.3" />
+    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
   </op:define>
 
   <generate />

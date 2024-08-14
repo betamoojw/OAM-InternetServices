@@ -4,17 +4,20 @@
 			"path": "."
 		},
 		{
-			"path": "../OFM-InternetWeatherModule"
+			"path": "./lib/OFM-InternetWeatherModule"
 		},
 		{
-			"path": "../OFM-SIPClientModule"
+			"path": "./lib/OFM-SIPClientModule"
 		},
 		{
-			"path": "../OFM-Network"
+			"path": "./lib/OFM-Network"
 		},
 		{
-			"path": "../OFM-WLANModule"
+			"path": "./lib/OFM-WLANModule"
 		},
+		{
+			"path": "../OFM-OTAUpdateModule"
+		}
 	],
 	"settings": {
 		"cSpell.language": "en,de,de-DE",
