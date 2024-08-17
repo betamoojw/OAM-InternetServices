@@ -297,8 +297,8 @@
 #define IW_KoCalcChannel(number) ((number >= IW_KoBlockOffset && number < IW_KoBlockOffset + IW_ChannelCount * IW_KoBlockSize) ? (number - IW_KoBlockOffset) / IW_KoBlockSize : -1)
 
 #define IW_KoCHHTTPStatus 0
-#define IW_KoCHCurrentTemparatur 1
-#define IW_KoCHCurrentTemparaturFeelsLike 2
+#define IW_KoCHCurrentTemperatur 1
+#define IW_KoCHCurrentTemperaturFeelsLike 2
 #define IW_KoCHCurrentHumidity 3
 #define IW_KoCHCurrentPressure 4
 #define IW_KoCHCurrentWind 5
@@ -309,16 +309,16 @@
 #define IW_KoCHCurrentUVI 10
 #define IW_KoCHCurrentClouds 11
 #define IW_KoCHTodayDescription 12
-#define IW_KoCHTodayTemparaturDay 13
-#define IW_KoCHTodayTemparaturNight 14
-#define IW_KoCHTodayTemparaturMorning 15
-#define IW_KoCHTodayTemparaturEvening 16
-#define IW_KoCHTodayTemparaturMin 17
-#define IW_KoCHTodayTemparaturMax 18
-#define IW_KoCHTodayTemparaturDayFeelsLike 19
-#define IW_KoCHTodayTemparaturNightFeelsLike 20
-#define IW_KoCHTodayTemparaturMorningFeelsLike 21
-#define IW_KoCHTodayTemparaturEveningFeelsLike 22
+#define IW_KoCHTodayTemperaturDay 13
+#define IW_KoCHTodayTemperaturNight 14
+#define IW_KoCHTodayTemperaturMorning 15
+#define IW_KoCHTodayTemperaturEvening 16
+#define IW_KoCHTodayTemperaturMin 17
+#define IW_KoCHTodayTemperaturMax 18
+#define IW_KoCHTodayTemperaturDayFeelsLike 19
+#define IW_KoCHTodayTemperaturNightFeelsLike 20
+#define IW_KoCHTodayTemperaturMorningFeelsLike 21
+#define IW_KoCHTodayTemperaturEveningFeelsLike 22
 #define IW_KoCHTodayHumidity 23
 #define IW_KoCHTodayPressure 24
 #define IW_KoCHTodayWind 25
@@ -330,16 +330,16 @@
 #define IW_KoCHTodayUVI 31
 #define IW_KoCHTodayClouds 32
 #define IW_KoCHTomorrowDescription 33
-#define IW_KoCHTomorrowTemparaturDay 34
-#define IW_KoCHTomorrowTemparaturNight 35
-#define IW_KoCHTomorrowTemparaturMorning 36
-#define IW_KoCHTomorrowTemparaturEvening 37
-#define IW_KoCHTomorrowTemparaturMin 38
-#define IW_KoCHTomorrowTemparaturMax 39
-#define IW_KoCHTomorrowTemparaturDayFeelsLike 40
-#define IW_KoCHTomorrowTemparaturNightFeelsLike 41
-#define IW_KoCHTomorrowTemparaturMorningFeelsLike 42
-#define IW_KoCHTomorrowTemparaturEveningFeelsLike 43
+#define IW_KoCHTomorrowTemperaturDay 34
+#define IW_KoCHTomorrowTemperaturNight 35
+#define IW_KoCHTomorrowTemperaturMorning 36
+#define IW_KoCHTomorrowTemperaturEvening 37
+#define IW_KoCHTomorrowTemperaturMin 38
+#define IW_KoCHTomorrowTemperaturMax 39
+#define IW_KoCHTomorrowTemperaturDayFeelsLike 40
+#define IW_KoCHTomorrowTemperaturNightFeelsLike 41
+#define IW_KoCHTomorrowTemperaturMorningFeelsLike 42
+#define IW_KoCHTomorrowTemperaturEveningFeelsLike 43
 #define IW_KoCHTomorrowHumidity 44
 #define IW_KoCHTomorrowPressure 45
 #define IW_KoCHTomorrowWind 46
@@ -352,16 +352,16 @@
 #define IW_KoCHTomorrowClouds 53
 #define IW_KoCHForecastSelection 54
 #define IW_KoCHForecastDescription 55
-#define IW_KoCHForecastTemparaturDay 56
-#define IW_KoCHForecastTemparaturNight 57
-#define IW_KoCHForecastTemparaturMorning 58
-#define IW_KoCHForecastTemparaturEvening 59
-#define IW_KoCHForecastTemparaturMin 60
-#define IW_KoCHForecastTemparaturMax 61
-#define IW_KoCHForecastTemparaturDayFeelsLike 62
-#define IW_KoCHForecastTemparaturNightFeelsLike 63
-#define IW_KoCHForecastTemparaturMorningFeelsLike 64
-#define IW_KoCHForecastTemparaturEveningFeelsLike 65
+#define IW_KoCHForecastTemperaturDay 56
+#define IW_KoCHForecastTemperaturNight 57
+#define IW_KoCHForecastTemperaturMorning 58
+#define IW_KoCHForecastTemperaturEvening 59
+#define IW_KoCHForecastTemperaturMin 60
+#define IW_KoCHForecastTemperaturMax 61
+#define IW_KoCHForecastTemperaturDayFeelsLike 62
+#define IW_KoCHForecastTemperaturNightFeelsLike 63
+#define IW_KoCHForecastTemperaturMorningFeelsLike 64
+#define IW_KoCHForecastTemperaturEveningFeelsLike 65
 #define IW_KoCHForecastHumidity 66
 #define IW_KoCHForecastPressure 67
 #define IW_KoCHForecastWind 68
@@ -373,8 +373,8 @@
 #define IW_KoCHForecastUVI 74
 #define IW_KoCHForecastClouds 75
 #define IW_KoCHHour1Description 76
-#define IW_KoCHHour1Temparatur 77
-#define IW_KoCHHour1TemparaturFeelsLike 78
+#define IW_KoCHHour1Temperatur 77
+#define IW_KoCHHour1TemperaturFeelsLike 78
 #define IW_KoCHHour1Humidity 79
 #define IW_KoCHHour1Pressure 80
 #define IW_KoCHHour1Wind 81
@@ -386,8 +386,8 @@
 #define IW_KoCHHour1UVI 87
 #define IW_KoCHHour1Clouds 88
 #define IW_KoCHHour2Description 89
-#define IW_KoCHHour2Temparatur 90
-#define IW_KoCHHour2TemparaturFeelsLike 91
+#define IW_KoCHHour2Temperatur 90
+#define IW_KoCHHour2TemperaturFeelsLike 91
 #define IW_KoCHHour2Humidity 92
 #define IW_KoCHHour2Pressure 93
 #define IW_KoCHHour2Wind 94
@@ -402,9 +402,9 @@
 // 
 #define KoIW_CHHTTPStatus                        (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHTTPStatus)))
 // 
-#define KoIW_CHCurrentTemparatur                 (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHCurrentTemparatur)))
+#define KoIW_CHCurrentTemperatur                 (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHCurrentTemperatur)))
 // 
-#define KoIW_CHCurrentTemparaturFeelsLike        (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHCurrentTemparaturFeelsLike)))
+#define KoIW_CHCurrentTemperaturFeelsLike        (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHCurrentTemperaturFeelsLike)))
 // 
 #define KoIW_CHCurrentHumidity                   (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHCurrentHumidity)))
 // 
@@ -426,25 +426,25 @@
 // 
 #define KoIW_CHTodayDescription                  (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayDescription)))
 // 
-#define KoIW_CHTodayTemparaturDay                (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturDay)))
+#define KoIW_CHTodayTemperaturDay                (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturDay)))
 // 
-#define KoIW_CHTodayTemparaturNight              (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturNight)))
+#define KoIW_CHTodayTemperaturNight              (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturNight)))
 // 
-#define KoIW_CHTodayTemparaturMorning            (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturMorning)))
+#define KoIW_CHTodayTemperaturMorning            (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturMorning)))
 // 
-#define KoIW_CHTodayTemparaturEvening            (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturEvening)))
+#define KoIW_CHTodayTemperaturEvening            (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturEvening)))
 // 
-#define KoIW_CHTodayTemparaturMin                (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturMin)))
+#define KoIW_CHTodayTemperaturMin                (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturMin)))
 // 
-#define KoIW_CHTodayTemparaturMax                (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturMax)))
+#define KoIW_CHTodayTemperaturMax                (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturMax)))
 // 
-#define KoIW_CHTodayTemparaturDayFeelsLike       (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturDayFeelsLike)))
+#define KoIW_CHTodayTemperaturDayFeelsLike       (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturDayFeelsLike)))
 // 
-#define KoIW_CHTodayTemparaturNightFeelsLike     (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturNightFeelsLike)))
+#define KoIW_CHTodayTemperaturNightFeelsLike     (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturNightFeelsLike)))
 // 
-#define KoIW_CHTodayTemparaturMorningFeelsLike   (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturMorningFeelsLike)))
+#define KoIW_CHTodayTemperaturMorningFeelsLike   (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturMorningFeelsLike)))
 // 
-#define KoIW_CHTodayTemparaturEveningFeelsLike   (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemparaturEveningFeelsLike)))
+#define KoIW_CHTodayTemperaturEveningFeelsLike   (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayTemperaturEveningFeelsLike)))
 // 
 #define KoIW_CHTodayHumidity                     (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTodayHumidity)))
 // 
@@ -468,25 +468,25 @@
 // 
 #define KoIW_CHTomorrowDescription               (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowDescription)))
 // 
-#define KoIW_CHTomorrowTemparaturDay             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturDay)))
+#define KoIW_CHTomorrowTemperaturDay             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturDay)))
 // 
-#define KoIW_CHTomorrowTemparaturNight           (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturNight)))
+#define KoIW_CHTomorrowTemperaturNight           (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturNight)))
 // 
-#define KoIW_CHTomorrowTemparaturMorning         (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturMorning)))
+#define KoIW_CHTomorrowTemperaturMorning         (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturMorning)))
 // 
-#define KoIW_CHTomorrowTemparaturEvening         (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturEvening)))
+#define KoIW_CHTomorrowTemperaturEvening         (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturEvening)))
 // 
-#define KoIW_CHTomorrowTemparaturMin             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturMin)))
+#define KoIW_CHTomorrowTemperaturMin             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturMin)))
 // 
-#define KoIW_CHTomorrowTemparaturMax             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturMax)))
+#define KoIW_CHTomorrowTemperaturMax             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturMax)))
 // 
-#define KoIW_CHTomorrowTemparaturDayFeelsLike    (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturDayFeelsLike)))
+#define KoIW_CHTomorrowTemperaturDayFeelsLike    (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturDayFeelsLike)))
 // 
-#define KoIW_CHTomorrowTemparaturNightFeelsLike  (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturNightFeelsLike)))
+#define KoIW_CHTomorrowTemperaturNightFeelsLike  (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturNightFeelsLike)))
 // 
-#define KoIW_CHTomorrowTemparaturMorningFeelsLike (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturMorningFeelsLike)))
+#define KoIW_CHTomorrowTemperaturMorningFeelsLike (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturMorningFeelsLike)))
 // 
-#define KoIW_CHTomorrowTemparaturEveningFeelsLike (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemparaturEveningFeelsLike)))
+#define KoIW_CHTomorrowTemperaturEveningFeelsLike (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowTemperaturEveningFeelsLike)))
 // 
 #define KoIW_CHTomorrowHumidity                  (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHTomorrowHumidity)))
 // 
@@ -512,25 +512,25 @@
 // 
 #define KoIW_CHForecastDescription               (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastDescription)))
 // 
-#define KoIW_CHForecastTemparaturDay             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturDay)))
+#define KoIW_CHForecastTemperaturDay             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturDay)))
 // 
-#define KoIW_CHForecastTemparaturNight           (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturNight)))
+#define KoIW_CHForecastTemperaturNight           (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturNight)))
 // 
-#define KoIW_CHForecastTemparaturMorning         (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturMorning)))
+#define KoIW_CHForecastTemperaturMorning         (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturMorning)))
 // 
-#define KoIW_CHForecastTemparaturEvening         (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturEvening)))
+#define KoIW_CHForecastTemperaturEvening         (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturEvening)))
 // 
-#define KoIW_CHForecastTemparaturMin             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturMin)))
+#define KoIW_CHForecastTemperaturMin             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturMin)))
 // 
-#define KoIW_CHForecastTemparaturMax             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturMax)))
+#define KoIW_CHForecastTemperaturMax             (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturMax)))
 // 
-#define KoIW_CHForecastTemparaturDayFeelsLike    (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturDayFeelsLike)))
+#define KoIW_CHForecastTemperaturDayFeelsLike    (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturDayFeelsLike)))
 // 
-#define KoIW_CHForecastTemparaturNightFeelsLike  (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturNightFeelsLike)))
+#define KoIW_CHForecastTemperaturNightFeelsLike  (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturNightFeelsLike)))
 // 
-#define KoIW_CHForecastTemparaturMorningFeelsLike (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturMorningFeelsLike)))
+#define KoIW_CHForecastTemperaturMorningFeelsLike (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturMorningFeelsLike)))
 // 
-#define KoIW_CHForecastTemparaturEveningFeelsLike (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemparaturEveningFeelsLike)))
+#define KoIW_CHForecastTemperaturEveningFeelsLike (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastTemperaturEveningFeelsLike)))
 // 
 #define KoIW_CHForecastHumidity                  (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHForecastHumidity)))
 // 
@@ -554,9 +554,9 @@
 // 
 #define KoIW_CHHour1Description                  (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour1Description)))
 // 
-#define KoIW_CHHour1Temparatur                   (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour1Temparatur)))
+#define KoIW_CHHour1Temperatur                   (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour1Temperatur)))
 // 
-#define KoIW_CHHour1TemparaturFeelsLike          (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour1TemparaturFeelsLike)))
+#define KoIW_CHHour1TemperaturFeelsLike          (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour1TemperaturFeelsLike)))
 // 
 #define KoIW_CHHour1Humidity                     (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour1Humidity)))
 // 
@@ -580,9 +580,9 @@
 // 
 #define KoIW_CHHour2Description                  (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour2Description)))
 // 
-#define KoIW_CHHour2Temparatur                   (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour2Temparatur)))
+#define KoIW_CHHour2Temperatur                   (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour2Temperatur)))
 // 
-#define KoIW_CHHour2TemparaturFeelsLike          (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour2TemparaturFeelsLike)))
+#define KoIW_CHHour2TemperaturFeelsLike          (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour2TemperaturFeelsLike)))
 // 
 #define KoIW_CHHour2Humidity                     (knx.getGroupObject(IW_KoCalcNumber(IW_KoCHHour2Humidity)))
 // 
