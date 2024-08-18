@@ -11,8 +11,8 @@
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 47
 #define MAIN_ApplicationVersion 18
-#define MAIN_ParameterSize 6838
-#define MAIN_MaxKoNumber 984
+#define MAIN_ParameterSize 6859
+#define MAIN_MaxKoNumber 1199
 #define MAIN_OrderNumber "MGKnxINET"
 #define BASE_ModuleVersion 18
 #define WLAN_ModuleVersion 1
@@ -20,6 +20,7 @@
 #define IW_ModuleVersion 3
 #define SIP_ModuleVersion 2
 #define LOG_ModuleVersion 51
+#define FCB_ModuleVersion 0
 // Parameter with single occurrence
 
 
@@ -2760,6 +2761,66 @@
 // Ausgang
 #define KoLOG_KOfO                                (knx.getGroupObject(LOG_KoCalcNumber(LOG_KoKOfO)))
 
+#define FCB_VisibleChannels                     6838      // 0_t
+
+// Verfügbare Kanäle
+#define ParamFCB_VisibleChannels                     ()
+
+#define FCB_ChannelCount 20
+
+// Parameter per channel
+#define FCB_ParamBlockOffset 6839
+#define FCB_ParamBlockSize 1
+#define FCB_ParamCalcIndex(index) (index + FCB_ParamBlockOffset + _channelIndex * FCB_ParamBlockSize)
+
+#define FCB_CHChannelType                        0      // 0_t
+
+// Funktion
+#define ParamFCB_CHChannelType                       ()
+
+// deprecated
+#define FCB_KoOffset 1000
+
+// Communication objects per channel (multiple occurrence)
+#define FCB_KoBlockOffset 1000
+#define FCB_KoBlockSize 10
+
+#define FCB_KoCalcNumber(index) (index + FCB_KoBlockOffset + _channelIndex * FCB_KoBlockSize)
+#define FCB_KoCalcIndex(number) ((number >= FCB_KoCalcNumber(0) && number < FCB_KoCalcNumber(FCB_KoBlockSize)) ? (number - FCB_KoBlockOffset) % FCB_KoBlockSize : -1)
+#define FCB_KoCalcChannel(number) ((number >= FCB_KoBlockOffset && number < FCB_KoBlockOffset + FCB_ChannelCount * FCB_KoBlockSize) ? (number - FCB_KoBlockOffset) / FCB_KoBlockSize : -1)
+
+#define FCB_KoCHKO0 0
+#define FCB_KoCHKO1 1
+#define FCB_KoCHKO2 2
+#define FCB_KoCHKO3 3
+#define FCB_KoCHKO4 4
+#define FCB_KoCHKO5 5
+#define FCB_KoCHKO6 6
+#define FCB_KoCHKO7 7
+#define FCB_KoCHKO8 8
+#define FCB_KoCHKO9 9
+
+// 
+#define KoFCB_CHKO0                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO0)))
+// 
+#define KoFCB_CHKO1                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO1)))
+// 
+#define KoFCB_CHKO2                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO2)))
+// 
+#define KoFCB_CHKO3                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO3)))
+// 
+#define KoFCB_CHKO4                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO4)))
+// 
+#define KoFCB_CHKO5                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO5)))
+// 
+#define KoFCB_CHKO6                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO6)))
+// 
+#define KoFCB_CHKO7                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO7)))
+// 
+#define KoFCB_CHKO8                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO8)))
+// 
+#define KoFCB_CHKO9                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO9)))
+
 
 
 // Header generation for Module 'BASE_KommentarModule'
@@ -2768,7 +2829,7 @@
 #define BASE_KommentarModuleModuleParamSize 0
 #define BASE_KommentarModuleSubmodulesParamSize 0
 #define BASE_KommentarModuleParamSize 0
-#define BASE_KommentarModuleParamOffset 6838
+#define BASE_KommentarModuleParamOffset 6859
 #define BASE_KommentarModuleCalcIndex(index, m1) (index + BASE_KommentarModuleParamOffset + _channelIndex * BASE_KommentarModuleCount * BASE_KommentarModuleParamSize + m1 * BASE_KommentarModuleParamSize)
 
 

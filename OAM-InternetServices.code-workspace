@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "../OFM-OTAUpdateModule"
+		},
+		{
+			"path": "../OFM-FunctionBlocks"
 		}
 	],
 	"settings": {
