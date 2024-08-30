@@ -10,8 +10,8 @@
                                              
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 46
-#define MAIN_ApplicationVersion 6
-#define MAIN_ParameterSize 6817
+#define MAIN_ApplicationVersion 7
+#define MAIN_ParameterSize 7958
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
 #define BASE_ModuleVersion 18
@@ -20,6 +20,7 @@
 #define IW_ModuleVersion 3
 #define SIP_ModuleVersion 2
 #define LOG_ModuleVersion 51
+#define FCB_ModuleVersion 1
 // Parameter with single occurrence
 
 
@@ -1128,7 +1129,7 @@
 // Buzzer sperren
 #define KoLOG_BuzzerLock                          (knx.getGroupObject(LOG_KoBuzzerLock))
 
-#define LOG_ChannelCount 40
+#define LOG_ChannelCount 50
 
 // Parameter per channel
 #define LOG_ParamBlockOffset 3457
@@ -2797,6 +2798,336 @@
 // Ausgang
 #define KoLOG_KOfO                                (knx.getGroupObject(LOG_KoCalcNumber(LOG_KoKOfO)))
 
+#define FCB_VisibleChannels                     7657      // uint8_t
+
+// Verfügbare Kanäle
+#define ParamFCB_VisibleChannels                     (knx.paramByte(FCB_VisibleChannels))
+
+#define FCB_ChannelCount 15
+
+// Parameter per channel
+#define FCB_ParamBlockOffset 7658
+#define FCB_ParamBlockSize 20
+#define FCB_ParamCalcIndex(index) (index + FCB_ParamBlockOffset + _channelIndex * FCB_ParamBlockSize)
+
+#define FCB_CHChannelType                        0      // 8 Bits, Bit 7-0
+#define FCB_CHChannelDisabled                    1      // 1 Bit, Bit 7
+#define     FCB_CHChannelDisabledMask 0x80
+#define     FCB_CHChannelDisabledShift 7
+#define FCB_CHLogicKo0D                          2      // 2 Bits, Bit 7-6
+#define     FCB_CHLogicKo0DMask 0xC0
+#define     FCB_CHLogicKo0DShift 6
+#define FCB_CHLogicKo1D                          2      // 2 Bits, Bit 5-4
+#define     FCB_CHLogicKo1DMask 0x30
+#define     FCB_CHLogicKo1DShift 4
+#define FCB_CHLogicKo2D                          2      // 2 Bits, Bit 3-2
+#define     FCB_CHLogicKo2DMask 0x0C
+#define     FCB_CHLogicKo2DShift 2
+#define FCB_CHLogicKo3D                          2      // 2 Bits, Bit 1-0
+#define     FCB_CHLogicKo3DMask 0x03
+#define     FCB_CHLogicKo3DShift 0
+#define FCB_CHLogicKo4D                          3      // 2 Bits, Bit 7-6
+#define     FCB_CHLogicKo4DMask 0xC0
+#define     FCB_CHLogicKo4DShift 6
+#define FCB_CHLogicKo5D                          3      // 2 Bits, Bit 5-4
+#define     FCB_CHLogicKo5DMask 0x30
+#define     FCB_CHLogicKo5DShift 4
+#define FCB_CHLogicKo6D                          3      // 2 Bits, Bit 3-2
+#define     FCB_CHLogicKo6DMask 0x0C
+#define     FCB_CHLogicKo6DShift 2
+#define FCB_CHLogicKo7D                          3      // 2 Bits, Bit 1-0
+#define     FCB_CHLogicKo7DMask 0x03
+#define     FCB_CHLogicKo7DShift 0
+#define FCB_CHLogicKo8D                          4      // 2 Bits, Bit 7-6
+#define     FCB_CHLogicKo8DMask 0xC0
+#define     FCB_CHLogicKo8DShift 6
+#define FCB_CHLogicKo9D                          4      // 2 Bits, Bit 5-4
+#define     FCB_CHLogicKo9DMask 0x30
+#define     FCB_CHLogicKo9DShift 4
+#define FCB_CHLogicOutInv                        4      // 1 Bit, Bit 4
+#define     FCB_CHLogicOutInvMask 0x10
+#define     FCB_CHLogicOutInvShift 4
+#define FCB_CHLogicBehavKo0                      5      // 4 Bits, Bit 7-4
+#define     FCB_CHLogicBehavKo0Mask 0xF0
+#define     FCB_CHLogicBehavKo0Shift 4
+#define FCB_CHLogicBehavKo1                      5      // 4 Bits, Bit 3-0
+#define     FCB_CHLogicBehavKo1Mask 0x0F
+#define     FCB_CHLogicBehavKo1Shift 0
+#define FCB_CHLogicBehavKo2                      6      // 4 Bits, Bit 7-4
+#define     FCB_CHLogicBehavKo2Mask 0xF0
+#define     FCB_CHLogicBehavKo2Shift 4
+#define FCB_CHLogicBehavKo3                      6      // 4 Bits, Bit 3-0
+#define     FCB_CHLogicBehavKo3Mask 0x0F
+#define     FCB_CHLogicBehavKo3Shift 0
+#define FCB_CHLogicBehavKo4                      7      // 4 Bits, Bit 7-4
+#define     FCB_CHLogicBehavKo4Mask 0xF0
+#define     FCB_CHLogicBehavKo4Shift 4
+#define FCB_CHLogicBehavKo5                      7      // 4 Bits, Bit 3-0
+#define     FCB_CHLogicBehavKo5Mask 0x0F
+#define     FCB_CHLogicBehavKo5Shift 0
+#define FCB_CHLogicBehavKo6                      8      // 4 Bits, Bit 7-4
+#define     FCB_CHLogicBehavKo6Mask 0xF0
+#define     FCB_CHLogicBehavKo6Shift 4
+#define FCB_CHLogicBehavKo7                      8      // 4 Bits, Bit 3-0
+#define     FCB_CHLogicBehavKo7Mask 0x0F
+#define     FCB_CHLogicBehavKo7Shift 0
+#define FCB_CHLogicBehavKo8                      9      // 4 Bits, Bit 7-4
+#define     FCB_CHLogicBehavKo8Mask 0xF0
+#define     FCB_CHLogicBehavKo8Shift 4
+#define FCB_CHLogicBehavOut                      9      // 1 Bit, Bit 3
+#define     FCB_CHLogicBehavOutMask 0x08
+#define     FCB_CHLogicBehavOutShift 3
+#define FCB_CHPrioKo0D                           2      // 2 Bits, Bit 7-6
+#define     FCB_CHPrioKo0DMask 0xC0
+#define     FCB_CHPrioKo0DShift 6
+#define FCB_CHPrioKo1D                           2      // 2 Bits, Bit 5-4
+#define     FCB_CHPrioKo1DMask 0x30
+#define     FCB_CHPrioKo1DShift 4
+#define FCB_CHPrioKo2D                           2      // 2 Bits, Bit 3-2
+#define     FCB_CHPrioKo2DMask 0x0C
+#define     FCB_CHPrioKo2DShift 2
+#define FCB_CHPrioKo3D                           2      // 2 Bits, Bit 1-0
+#define     FCB_CHPrioKo3DMask 0x03
+#define     FCB_CHPrioKo3DShift 0
+#define FCB_CHPrioKo4D                           3      // 2 Bits, Bit 7-6
+#define     FCB_CHPrioKo4DMask 0xC0
+#define     FCB_CHPrioKo4DShift 6
+#define FCB_CHPrioKo5D                           3      // 2 Bits, Bit 5-4
+#define     FCB_CHPrioKo5DMask 0x30
+#define     FCB_CHPrioKo5DShift 4
+#define FCB_CHPrioKo6D                           3      // 2 Bits, Bit 3-2
+#define     FCB_CHPrioKo6DMask 0x0C
+#define     FCB_CHPrioKo6DShift 2
+#define FCB_CHPrioKo7D                           3      // 2 Bits, Bit 1-0
+#define     FCB_CHPrioKo7DMask 0x03
+#define     FCB_CHPrioKo7DShift 0
+#define FCB_CHPrioKo8D                           4      // 2 Bits, Bit 7-6
+#define     FCB_CHPrioKo8DMask 0xC0
+#define     FCB_CHPrioKo8DShift 6
+#define FCB_CHPrioOutputType                     4      // 2 Bits, Bit 5-4
+#define     FCB_CHPrioOutputTypeMask 0x30
+#define     FCB_CHPrioOutputTypeShift 4
+#define FCB_CHPrioOutPKo0                        5      // uint8_t
+#define FCB_CHPrioOutByteKo0                     5      // uint8_t
+#define FCB_CHPrioOutPKo1                        6      // uint8_t
+#define FCB_CHPrioOutByteKo1                     6      // uint8_t
+#define FCB_CHPrioOutPKo2                        7      // uint8_t
+#define FCB_CHPrioOutByteKo2                     7      // uint8_t
+#define FCB_CHPrioOutPKo3                        8      // uint8_t
+#define FCB_CHPrioOutByteKo3                     8      // uint8_t
+#define FCB_CHPrioOutPKo4                        9      // uint8_t
+#define FCB_CHPrioOutByteKo4                     9      // uint8_t
+#define FCB_CHPrioOutPKo5                       10      // uint8_t
+#define FCB_CHPrioOutByteKo5                    10      // uint8_t
+#define FCB_CHPrioOutPKo6                       11      // uint8_t
+#define FCB_CHPrioOutByteKo6                    11      // uint8_t
+#define FCB_CHPrioOutPKo7                       12      // uint8_t
+#define FCB_CHPrioOutByteKo7                    12      // uint8_t
+#define FCB_CHPrioOutPKo8                       13      // uint8_t
+#define FCB_CHPrioOutByteKo8                    13      // uint8_t
+#define FCB_CHPrioOutPDefault                   14      // uint8_t
+#define FCB_CHPrioOutByteDefault                14      // uint8_t
+#define FCB_CHPrioBehavKo0                      15      // 4 Bits, Bit 7-4
+#define     FCB_CHPrioBehavKo0Mask 0xF0
+#define     FCB_CHPrioBehavKo0Shift 4
+#define FCB_CHPrioBehavKo1                      15      // 4 Bits, Bit 3-0
+#define     FCB_CHPrioBehavKo1Mask 0x0F
+#define     FCB_CHPrioBehavKo1Shift 0
+#define FCB_CHPrioBehavKo2                      16      // 4 Bits, Bit 7-4
+#define     FCB_CHPrioBehavKo2Mask 0xF0
+#define     FCB_CHPrioBehavKo2Shift 4
+#define FCB_CHPrioBehavKo3                      16      // 4 Bits, Bit 3-0
+#define     FCB_CHPrioBehavKo3Mask 0x0F
+#define     FCB_CHPrioBehavKo3Shift 0
+#define FCB_CHPrioBehavKo4                      17      // 4 Bits, Bit 7-4
+#define     FCB_CHPrioBehavKo4Mask 0xF0
+#define     FCB_CHPrioBehavKo4Shift 4
+#define FCB_CHPrioBehavKo5                      17      // 4 Bits, Bit 3-0
+#define     FCB_CHPrioBehavKo5Mask 0x0F
+#define     FCB_CHPrioBehavKo5Shift 0
+#define FCB_CHPrioBehavKo6                      18      // 4 Bits, Bit 7-4
+#define     FCB_CHPrioBehavKo6Mask 0xF0
+#define     FCB_CHPrioBehavKo6Shift 4
+#define FCB_CHPrioBehavKo7                      18      // 4 Bits, Bit 3-0
+#define     FCB_CHPrioBehavKo7Mask 0x0F
+#define     FCB_CHPrioBehavKo7Shift 0
+#define FCB_CHPrioBehavKo8                      19      // 4 Bits, Bit 7-4
+#define     FCB_CHPrioBehavKo8Mask 0xF0
+#define     FCB_CHPrioBehavKo8Shift 4
+#define FCB_CHPrioBehavOut                      19      // 1 Bit, Bit 3
+#define     FCB_CHPrioBehavOutMask 0x08
+#define     FCB_CHPrioBehavOutShift 3
+
+// Funktionsblock %C%
+#define ParamFCB_CHChannelType                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHChannelType)))
+// Kanal deaktivieren (zu Testzwecken)
+#define ParamFCB_CHChannelDisabled                   ((bool)(knx.paramByte(FCB_ParamCalcIndex(FCB_CHChannelDisabled)) & FCB_CHChannelDisabledMask))
+// Eingang 1
+#define ParamFCB_CHLogicKo0D                         ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo0D)) & FCB_CHLogicKo0DMask) >> FCB_CHLogicKo0DShift)
+// Eingang 2
+#define ParamFCB_CHLogicKo1D                         ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo1D)) & FCB_CHLogicKo1DMask) >> FCB_CHLogicKo1DShift)
+// Eingang 3
+#define ParamFCB_CHLogicKo2D                         ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo2D)) & FCB_CHLogicKo2DMask) >> FCB_CHLogicKo2DShift)
+// Eingang 4
+#define ParamFCB_CHLogicKo3D                         (knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo3D)) & FCB_CHLogicKo3DMask)
+// Eingang 5
+#define ParamFCB_CHLogicKo4D                         ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo4D)) & FCB_CHLogicKo4DMask) >> FCB_CHLogicKo4DShift)
+// Eingang 6
+#define ParamFCB_CHLogicKo5D                         ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo5D)) & FCB_CHLogicKo5DMask) >> FCB_CHLogicKo5DShift)
+// Eingang 7
+#define ParamFCB_CHLogicKo6D                         ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo6D)) & FCB_CHLogicKo6DMask) >> FCB_CHLogicKo6DShift)
+// Eingang 8
+#define ParamFCB_CHLogicKo7D                         (knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo7D)) & FCB_CHLogicKo7DMask)
+// Eingang 9
+#define ParamFCB_CHLogicKo8D                         ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo8D)) & FCB_CHLogicKo8DMask) >> FCB_CHLogicKo8DShift)
+// Eingang 10
+#define ParamFCB_CHLogicKo9D                         ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicKo9D)) & FCB_CHLogicKo9DMask) >> FCB_CHLogicKo9DShift)
+// Invertiert
+#define ParamFCB_CHLogicOutInv                       ((bool)(knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicOutInv)) & FCB_CHLogicOutInvMask))
+// Initialisierung
+#define ParamFCB_CHLogicBehavKo0                     ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavKo0)) & FCB_CHLogicBehavKo0Mask) >> FCB_CHLogicBehavKo0Shift)
+// Initialisierung
+#define ParamFCB_CHLogicBehavKo1                     (knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavKo1)) & FCB_CHLogicBehavKo1Mask)
+// Initialisierung
+#define ParamFCB_CHLogicBehavKo2                     ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavKo2)) & FCB_CHLogicBehavKo2Mask) >> FCB_CHLogicBehavKo2Shift)
+// Initialisierung
+#define ParamFCB_CHLogicBehavKo3                     (knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavKo3)) & FCB_CHLogicBehavKo3Mask)
+// Initialisierung
+#define ParamFCB_CHLogicBehavKo4                     ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavKo4)) & FCB_CHLogicBehavKo4Mask) >> FCB_CHLogicBehavKo4Shift)
+// Initialisierung
+#define ParamFCB_CHLogicBehavKo5                     (knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavKo5)) & FCB_CHLogicBehavKo5Mask)
+// Initialisierung
+#define ParamFCB_CHLogicBehavKo6                     ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavKo6)) & FCB_CHLogicBehavKo6Mask) >> FCB_CHLogicBehavKo6Shift)
+// Initialisierung
+#define ParamFCB_CHLogicBehavKo7                     (knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavKo7)) & FCB_CHLogicBehavKo7Mask)
+// Initialisierung
+#define ParamFCB_CHLogicBehavKo8                     ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavKo8)) & FCB_CHLogicBehavKo8Mask) >> FCB_CHLogicBehavKo8Shift)
+// Sendeverhalten
+#define ParamFCB_CHLogicBehavOut                     ((bool)(knx.paramByte(FCB_ParamCalcIndex(FCB_CHLogicBehavOut)) & FCB_CHLogicBehavOutMask))
+// Eingang 1
+#define ParamFCB_CHPrioKo0D                          ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioKo0D)) & FCB_CHPrioKo0DMask) >> FCB_CHPrioKo0DShift)
+// Eingang 2
+#define ParamFCB_CHPrioKo1D                          ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioKo1D)) & FCB_CHPrioKo1DMask) >> FCB_CHPrioKo1DShift)
+// Eingang 3
+#define ParamFCB_CHPrioKo2D                          ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioKo2D)) & FCB_CHPrioKo2DMask) >> FCB_CHPrioKo2DShift)
+// Eingang 4
+#define ParamFCB_CHPrioKo3D                          (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioKo3D)) & FCB_CHPrioKo3DMask)
+// Eingang 5
+#define ParamFCB_CHPrioKo4D                          ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioKo4D)) & FCB_CHPrioKo4DMask) >> FCB_CHPrioKo4DShift)
+// Eingang 6
+#define ParamFCB_CHPrioKo5D                          ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioKo5D)) & FCB_CHPrioKo5DMask) >> FCB_CHPrioKo5DShift)
+// Eingang 7
+#define ParamFCB_CHPrioKo6D                          ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioKo6D)) & FCB_CHPrioKo6DMask) >> FCB_CHPrioKo6DShift)
+// Eingang 8
+#define ParamFCB_CHPrioKo7D                          (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioKo7D)) & FCB_CHPrioKo7DMask)
+// Eingang 9
+#define ParamFCB_CHPrioKo8D                          ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioKo8D)) & FCB_CHPrioKo8DMask) >> FCB_CHPrioKo8DShift)
+// Type
+#define ParamFCB_CHPrioOutputType                    ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutputType)) & FCB_CHPrioOutputTypeMask) >> FCB_CHPrioOutputTypeShift)
+// Ausgangswert
+#define ParamFCB_CHPrioOutPKo0                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPKo0)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutByteKo0                    (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteKo0)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutPKo1                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPKo1)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutByteKo1                    (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteKo1)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutPKo2                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPKo2)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutByteKo2                    (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteKo2)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutPKo3                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPKo3)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutByteKo3                    (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteKo3)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutPKo4                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPKo4)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutByteKo4                    (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteKo4)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutPKo5                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPKo5)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutByteKo5                    (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteKo5)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutPKo6                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPKo6)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutByteKo6                    (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteKo6)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutPKo7                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPKo7)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutByteKo7                    (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteKo7)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutPKo8                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPKo8)))
+// Ausgangswert
+#define ParamFCB_CHPrioOutByteKo8                    (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteKo8)))
+// Ausgangswert wenn alle Eingänge AUS
+#define ParamFCB_CHPrioOutPDefault                   (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutPDefault)))
+// Ausgangswert wenn alle Eingänge AUS
+#define ParamFCB_CHPrioOutByteDefault                (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioOutByteDefault)))
+// Initialisierung
+#define ParamFCB_CHPrioBehavKo0                      ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavKo0)) & FCB_CHPrioBehavKo0Mask) >> FCB_CHPrioBehavKo0Shift)
+// Initialisierung
+#define ParamFCB_CHPrioBehavKo1                      (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavKo1)) & FCB_CHPrioBehavKo1Mask)
+// Initialisierung
+#define ParamFCB_CHPrioBehavKo2                      ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavKo2)) & FCB_CHPrioBehavKo2Mask) >> FCB_CHPrioBehavKo2Shift)
+// Initialisierung
+#define ParamFCB_CHPrioBehavKo3                      (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavKo3)) & FCB_CHPrioBehavKo3Mask)
+// Initialisierung
+#define ParamFCB_CHPrioBehavKo4                      ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavKo4)) & FCB_CHPrioBehavKo4Mask) >> FCB_CHPrioBehavKo4Shift)
+// Initialisierung
+#define ParamFCB_CHPrioBehavKo5                      (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavKo5)) & FCB_CHPrioBehavKo5Mask)
+// Initialisierung
+#define ParamFCB_CHPrioBehavKo6                      ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavKo6)) & FCB_CHPrioBehavKo6Mask) >> FCB_CHPrioBehavKo6Shift)
+// Initialisierung
+#define ParamFCB_CHPrioBehavKo7                      (knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavKo7)) & FCB_CHPrioBehavKo7Mask)
+// Initialisierung
+#define ParamFCB_CHPrioBehavKo8                      ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavKo8)) & FCB_CHPrioBehavKo8Mask) >> FCB_CHPrioBehavKo8Shift)
+// Sendeverhalten
+#define ParamFCB_CHPrioBehavOut                      ((bool)(knx.paramByte(FCB_ParamCalcIndex(FCB_CHPrioBehavOut)) & FCB_CHPrioBehavOutMask))
+
+// deprecated
+#define FCB_KoOffset 250
+
+// Communication objects per channel (multiple occurrence)
+#define FCB_KoBlockOffset 250
+#define FCB_KoBlockSize 10
+
+#define FCB_KoCalcNumber(index) (index + FCB_KoBlockOffset + _channelIndex * FCB_KoBlockSize)
+#define FCB_KoCalcIndex(number) ((number >= FCB_KoCalcNumber(0) && number < FCB_KoCalcNumber(FCB_KoBlockSize)) ? (number - FCB_KoBlockOffset) % FCB_KoBlockSize : -1)
+#define FCB_KoCalcChannel(number) ((number >= FCB_KoBlockOffset && number < FCB_KoBlockOffset + FCB_ChannelCount * FCB_KoBlockSize) ? (number - FCB_KoBlockOffset) / FCB_KoBlockSize : -1)
+
+#define FCB_KoCHKO0 0
+#define FCB_KoCHKO1 1
+#define FCB_KoCHKO2 2
+#define FCB_KoCHKO3 3
+#define FCB_KoCHKO4 4
+#define FCB_KoCHKO5 5
+#define FCB_KoCHKO6 6
+#define FCB_KoCHKO7 7
+#define FCB_KoCHKO8 8
+#define FCB_KoCHKO9 9
+
+// 
+#define KoFCB_CHKO0                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO0)))
+// 
+#define KoFCB_CHKO1                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO1)))
+// 
+#define KoFCB_CHKO2                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO2)))
+// 
+#define KoFCB_CHKO3                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO3)))
+// 
+#define KoFCB_CHKO4                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO4)))
+// 
+#define KoFCB_CHKO5                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO5)))
+// 
+#define KoFCB_CHKO6                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO6)))
+// 
+#define KoFCB_CHKO7                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO7)))
+// 
+#define KoFCB_CHKO8                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO8)))
+// 
+#define KoFCB_CHKO9                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO9)))
+
 
 
 // Header generation for Module 'BASE_KommentarModule'
@@ -2805,7 +3136,7 @@
 #define BASE_KommentarModuleModuleParamSize 0
 #define BASE_KommentarModuleSubmodulesParamSize 0
 #define BASE_KommentarModuleParamSize 0
-#define BASE_KommentarModuleParamOffset 6817
+#define BASE_KommentarModuleParamOffset 7958
 #define BASE_KommentarModuleCalcIndex(index, m1) (index + BASE_KommentarModuleParamOffset + _channelIndex * BASE_KommentarModuleCount * BASE_KommentarModuleParamSize + m1 * BASE_KommentarModuleParamSize)
 
 
