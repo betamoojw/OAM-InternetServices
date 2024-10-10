@@ -5,9 +5,9 @@ db4a240 v1 lib/OFM-FileTransferModule https://github.com/OpenKNX/OFM-FileTransfe
 181ff20 v1 lib/OFM-FunctionBlocks https://github.com/OpenKNX/OFM-FunctionBlocks.git
 f79e653 testLoopTime lib/OFM-InternetWeatherModule https://github.com/OpenKNX/OFM-InternetWeatherModule.git
 9335c33 v1 lib/OFM-LogicModule https://github.com/OpenKNX/OFM-LogicModule.git
-4b9a193 v1 lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
+e8dbdb1 v1dev lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
 d59c88b v1 lib/OFM-OTAUpdateModule https://github.com/mgeramb/OFM-OTAUpdateModule.git
 73598f9 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule
 1ce7a13 v1 lib/OFM-UsbExchange https://github.com/OpenKNX/OFM-UsbExchange.git
 02cf33f v1 lib/OFM-WLANModule https://github.com/mgeramb/OFM-WLANModule.git
-8410b2a v1 lib/OGM-Common https://github.com/OpenKNX/OGM-Common
+b1b922b v1dev lib/OGM-Common https://github.com/OpenKNX/OGM-Common
