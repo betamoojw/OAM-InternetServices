@@ -59,7 +59,9 @@
         "valarray": "cpp",
         "variant": "cpp",
         "unordered_set": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "sntp.h": "c",
+        "esp32-hal.h": "c"
     },
     "cmake.configureOnOpen": false
 }

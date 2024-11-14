@@ -1,7 +1,6 @@
 #include "OpenKNX.h"
 
 #ifdef ARDUINO_ARCH_ESP32
-#include "WLANModule.h"
 #include "OTAUpdateModule.h"
 #endif
 
