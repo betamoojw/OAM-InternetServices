@@ -10,7 +10,7 @@
                                              
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 47
-#define MAIN_ApplicationVersion 22
+#define MAIN_ApplicationVersion 23
 #define MAIN_ParameterSize 7993
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
@@ -159,6 +159,9 @@
 #define NET_SubnetMask                          50      // IP address, 4 Byte
 #define NET_GatewayAddress                      54      // IP address, 4 Byte
 #define NET_NameserverAddress                   58      // IP address, 4 Byte
+#define NET_ServiceNTP_1                        62      // 1 Bit, Bit 7
+#define     NET_ServiceNTP_1Mask 0x80
+#define     NET_ServiceNTP_1Shift 7
 #define NET_CustomHostname                      62      // 1 Bit, Bit 7
 #define     NET_CustomHostnameMask 0x80
 #define     NET_CustomHostnameShift 7
@@ -188,6 +191,8 @@
 #define ParamNET_GatewayAddress                      (knx.paramInt(NET_GatewayAddress))
 // Nameserver
 #define ParamNET_NameserverAddress                   (knx.paramInt(NET_NameserverAddress))
+// NetServciceNTP
+#define ParamNET_ServiceNTP_1                        ((bool)(knx.paramByte(NET_ServiceNTP_1) & NET_ServiceNTP_1Mask))
 // Hostname anpassen
 #define ParamNET_CustomHostname                      ((bool)(knx.paramByte(NET_CustomHostname) & NET_CustomHostnameMask))
 // DHCP
