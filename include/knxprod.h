@@ -2,7 +2,9 @@
 #ifdef BETAXML
 
 // BETA
-#if ARDUINO_ARCH_ESP32     
+#if KNX_IP_LAN
+#include "knxprodRP2040-Dev.h"
+#elif ARDUINO_ARCH_ESP32      
 #include "knxprodESP32-Beta.h"
 #else
 #include "knxprodRP2040-Beta.h"
@@ -11,7 +13,9 @@
 #else
 
 // DEV
-#if ARDUINO_ARCH_ESP32     
+#if KNX_IP_LAN
+#include "knxprodRP2040-Dev.h"
+#elif ARDUINO_ARCH_ESP32     
 #include "knxprodESP32-Dev.h"
 #else
 #include "knxprodRP2040-Dev.h"

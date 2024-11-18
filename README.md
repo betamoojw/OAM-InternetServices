@@ -7,6 +7,10 @@ Derzeit implementierte Dienste:
 - [OFM-InternetWeatherModule](https://github.com/OpenKNX/OFM-InternetWeatherModule) - Bereitstellung von Wetterdaten aus dem Internet
 - [OFM-SIPClientModule](https://github.com/OpenKNX/OFM-SIPClientModule) - Auslösen von Telefonanrufen (ohne Sprachverbindung)
 
+Sonstige enthaltene Module:
+- [OFM-Logic](https://github.com/OpenKNX/OFM-LogicModule) - Logikmodul
+- [OFM-FunctionBlocks](https://github.com/OpenKNX/OFM-FunctionBlocks) - Funktionsblöcke
+
 Geplante künftige Dienste:
 
 - NTP (Zeitserver) (über das Networkmodule)

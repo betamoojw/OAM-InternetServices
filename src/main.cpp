@@ -15,6 +15,7 @@
 #include "Logic.h"
 #include "InternetWeatherModule.h"
 #include "SIPModule.h"
+#include "FunctionBlocksModule.h"
 #ifdef USE_AUTO_CONNECT
 #include <AutoConnect.h>
 #include <WebServer.h>
@@ -38,7 +39,7 @@ void setup()
     openknx.addModule(1, openknxNetwork);
 #endif    
     openknx.addModule(2, openknxLogic);
- //   openknx.addModule(3, openknxInternetWeatherModule);
+    openknx.addModule(3, openknxInternetWeatherModule);
 #ifdef ARDUINO_ARCH_ESP32    
     openknx.addModule(4, openknxOTAUpdateModule);
 
@@ -49,6 +50,7 @@ void setup()
 #endif
     openknx.addModule(7, openknxInternetWeatherModule);
     openknx.addModule(8, openknxSIPModule);
+    openknx.addModule(9, openknxFunctionBlocksModule);
     openknx.setup();
 #ifdef USE_AUTO_CONNECT
     config.apid ="OpenKNX";
