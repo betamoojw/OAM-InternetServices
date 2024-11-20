@@ -1,1 +1,0 @@
-openknxproducer create src/InternetServicesRP2040-Dev.xml -h include/knxprodRP2040-Dev.h -o InternetServicesRP2040-Dev.knxprod -debug

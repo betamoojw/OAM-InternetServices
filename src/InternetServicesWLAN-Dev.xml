@@ -3,12 +3,12 @@
 <KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
   
   <op:config href="InternetServices.conf.xml" />
-  
+
   <op:ETS 
     OpenKnxId="0xAE" 
     ApplicationNumber="0x2F" 
-    ApplicationVersion="19"
-    ReplacesVersions="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18" 
+    ApplicationVersion="23"
+    ReplacesVersions="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22" 
     ApplicationRevision="0"
     ProductName="Internet Dienste (WLAN)" 
     BusCurrent="30" BuildSuffix="-Dev"
@@ -20,14 +20,10 @@
     <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
   </op:define>
 
-  <!-- <op:define prefix="NET" ModuleType="12" share="../lib/OFM-Network/src/Network.share.xml">
+  <op:define prefix="NET" ModuleType="12" share="../lib/OFM-Network/src/Network.share.xml">
     <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="%NET_VerifyVersion%" /> 
-  </op:define> -->
-
-  <op:define prefix="WLAN" ModuleType="12" share="../lib/OFM-WLANModule/src/WLAN.share.xml"
-    KoSingleOffset="20">
-    <op:verify File="../lib/OFM-WLANModule/library.json" ModuleVersion="%WLAN_VerifyVersion%" />
   </op:define>
+
 
   <op:define prefix="UCT" share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
     ModuleType="13">

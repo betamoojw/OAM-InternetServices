@@ -9,5 +9,4 @@ f79e653 testLoopTime lib/OFM-InternetWeatherModule https://github.com/OpenKNX/OF
 d59c88b v1 lib/OFM-OTAUpdateModule https://github.com/mgeramb/OFM-OTAUpdateModule.git
 73598f9 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule
 1ce7a13 v1 lib/OFM-UsbExchange https://github.com/OpenKNX/OFM-UsbExchange.git
-02cf33f v1 lib/OFM-WLANModule https://github.com/mgeramb/OFM-WLANModule.git
-9245309 v1dev lib/OGM-Common https://github.com/OpenKNX/OGM-Common
+8569e4c ImplementLitteFS lib/OGM-Common https://github.com/OpenKNX/OGM-Common

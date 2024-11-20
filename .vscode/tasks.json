@@ -11,29 +11,29 @@
             "group": "test"
         },
         {
-            "label": "OpenKNXproducer (RP2040 DEV)",
+            "label": "OpenKNXproducer (DEV)",
             "type": "shell",
             "command": "OpenKNXproducer",
             "args": [
                 "create",
                 "--Debug",
                 "-h",
-                "include/knxprodRP2040-Dev.h",
-                "src/InternetServicesRP2040-Dev"
+                "include/knxprod.h",
+                "src/InternetServices-Dev"
             ],
             "problemMatcher": [],
             "group": "test"
         },
         {
-            "label": "OpenKNXproducer (ESP32 DEV)",
+            "label": "OpenKNXproducer (WLAN DEV)",
             "type": "shell",
             "command": "OpenKNXproducer",
             "args": [
                 "create",
                 "--Debug",
                 "-h",
-                "include/knxprodESP32-Dev.h",
-                "src/InternetServicesESP32-Dev"
+                "include/knxprod.h",
+                "src/InternetServicesWLAN-Dev"
             ],
             "problemMatcher": [],
             "group": "test"
@@ -92,20 +92,21 @@
             "problemMatcher": []
         },
         {
-            "label": "Build-DEV-Release",
+            "label": "Build-Dev",
             "type": "shell",
             "command": "scripts/Build-Release.ps1", 
             "args": [
+                "Dev"
             ],
             "problemMatcher": [],
             "group": "test"
         },
         {
-            "label": "Build-Release",
+            "label": "Build-Beta",
             "type": "shell",
             "command": "scripts/Build-Release.ps1", 
             "args": [
-                "Release"
+                "Beta"
             ],
             "problemMatcher": [],
             "group": "test"

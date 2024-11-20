@@ -7,8 +7,8 @@
   <op:ETS
     OpenKnxId="0xAE"
     ApplicationNumber="0x2E"
-    ApplicationVersion="0.7"
-    ReplacesVersions="0.1 0.2 0.3 0.4 0.5 0.6"
+    ApplicationVersion="%ReleaseApplicationVersion%"
+    ReplacesVersions="%ReleaseReplacesVersions%"
     ApplicationRevision="0"
     ProductName="Internet Dienste"
     BusCurrent="30"
