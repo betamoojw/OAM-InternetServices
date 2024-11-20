@@ -10,12 +10,12 @@
                                              
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 47
-#define MAIN_ApplicationVersion 23
+#define MAIN_ApplicationVersion 24
 #define MAIN_ParameterSize 7993
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
-#define BASE_ModuleVersion 18
-#define NET_ModuleVersion 4
+#define BASE_ModuleVersion 19
+#define NET_ModuleVersion 5
 #define UCT_ModuleVersion 2
 #define IW_ModuleVersion 3
 #define SIP_ModuleVersion 2
