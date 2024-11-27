@@ -1,16 +1,12 @@
 #include "OpenKNX.h"
 
-#ifdef ARDUINO_ARCH_ESP32
-#include "OTAUpdateModule.h"
-#endif
-
 #ifdef NET_ModuleVersion
 #include "NetworkModule.h"
 #endif
 #ifdef ARDUINO_ARCH_RP2040
 #include "UsbExchangeModule.h"
-#include "FileTransferModule.h"
 #endif
+#include "FileTransferModule.h"
 #include "Logic.h"
 #include "InternetWeatherModule.h"
 #include "SIPModule.h"
@@ -39,14 +35,10 @@ void setup()
 #endif    
     openknx.addModule(2, openknxLogic);
     openknx.addModule(3, openknxInternetWeatherModule);
-#ifdef ARDUINO_ARCH_ESP32    
-    openknx.addModule(4, openknxOTAUpdateModule);
-
-#endif
 #ifdef ARDUINO_ARCH_RP2040
     openknx.addModule(5, openknxUsbExchangeModule);
-    openknx.addModule(6, openknxFileTransferModule);
 #endif
+    openknx.addModule(6, openknxFileTransferModule);
     openknx.addModule(7, openknxInternetWeatherModule);
     openknx.addModule(8, openknxSIPModule);
     openknx.addModule(9, openknxFunctionBlocksModule);
