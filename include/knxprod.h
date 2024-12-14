@@ -10,7 +10,7 @@
                                              
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 47
-#define MAIN_ApplicationVersion 24
+#define MAIN_ApplicationVersion 25
 #define MAIN_ParameterSize 8016
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
@@ -277,11 +277,11 @@
 
 // Wetterdienst
 #define ParamIW_CHProvider                          ((knx.paramByte(IW_ParamCalcIndex(IW_CHProvider)) & IW_CHProviderMask) >> IW_CHProviderShift)
-// Wetterdienst
+// Ort
 #define ParamIW_CHLocation                          (knx.paramByte(IW_ParamCalcIndex(IW_CHLocation)) & IW_CHLocationMask)
 // Vorhersagezeit
 #define ParamIW_CHForecast                          (knx.paramByte(IW_ParamCalcIndex(IW_CHForecast)))
-// Aktuelles Wetter
+// Messwert
 #define ParamIW_CHMeasurement                       (knx.paramByte(IW_ParamCalcIndex(IW_CHMeasurement)))
 // Type
 #define ParamIW_CHTempTime                          ((knx.paramByte(IW_ParamCalcIndex(IW_CHTempTime)) & IW_CHTempTimeMask) >> IW_CHTempTimeShift)
