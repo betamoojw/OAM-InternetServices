@@ -26,10 +26,6 @@
     <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="%NET_VerifyVersion%" />
   </op:define>
 
-  <!-- <op:define prefix="WLAN" ModuleType="12" 
-    share="WLAN.share.xml"
-    KoSingleOffset="20" /> -->
-
   <op:define prefix="UCT" share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
     ModuleType="13">
     <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="%UCT_VerifyVersion%" />
