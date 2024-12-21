@@ -25,20 +25,6 @@
             "group": "test"
         },
         {
-            "label": "OpenKNXproducer (WLAN DEV)",
-            "type": "shell",
-            "command": "OpenKNXproducer",
-            "args": [
-                "create",
-                "--Debug",
-                "-h",
-                "include/knxprod.h",
-                "src/InternetServicesWLAN-Dev"
-            ],
-            "problemMatcher": [],
-            "group": "test"
-        },
-        {
             "label": "Develop: RP2040 REG1_ETH_V1",
             "type": "shell",
             "command": "scripts/OpenKNX-Build.ps1",
@@ -66,6 +52,16 @@
             "args": [
                 "develop_REG1_ETH_V1_JLINK",
                 "upload"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Develop: ESP32 REG1_ESP_DEV_TP_NET",
+            "type": "shell",
+            "command": "scripts/OpenKNX-Build.ps1",
+            "args": [
+                "develop_REG1_ESP_DEV_TP_NET"
             ],
             "group": "build",
             "problemMatcher": []
