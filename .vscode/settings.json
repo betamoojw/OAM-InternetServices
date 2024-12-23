@@ -59,7 +59,13 @@
         "valarray": "cpp",
         "variant": "cpp",
         "unordered_set": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "sntp.h": "c",
+        "esp32-hal.h": "c",
+        "format": "cpp",
+        "span": "cpp",
+        "text_encoding": "cpp",
+        "regex": "cpp"
     },
     "cmake.configureOnOpen": false
 }

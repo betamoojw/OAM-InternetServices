@@ -11,29 +11,15 @@
             "group": "test"
         },
         {
-            "label": "OpenKNXproducer (RP2040 DEV)",
+            "label": "OpenKNXproducer (DEV)",
             "type": "shell",
             "command": "OpenKNXproducer",
             "args": [
                 "create",
                 "--Debug",
                 "-h",
-                "include/knxprodRP2040-Dev.h",
-                "src/InternetServicesRP2040-Dev"
-            ],
-            "problemMatcher": [],
-            "group": "test"
-        },
-        {
-            "label": "OpenKNXproducer (ESP32 DEV)",
-            "type": "shell",
-            "command": "OpenKNXproducer",
-            "args": [
-                "create",
-                "--Debug",
-                "-h",
-                "include/knxprodESP32-Dev.h",
-                "src/InternetServicesESP32-Dev"
+                "include/knxprod.h",
+                "src/InternetServices-Dev"
             ],
             "problemMatcher": [],
             "group": "test"
@@ -71,6 +57,16 @@
             "problemMatcher": []
         },
         {
+            "label": "Develop: ESP32 REG1_ESP_DEV_TP_NET",
+            "type": "shell",
+            "command": "scripts/OpenKNX-Build.ps1",
+            "args": [
+                "develop_REG1_ESP_DEV_TP_NET"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
             "label": "Develop: Adafruit_Feather_ESP32_V2",
             "type": "shell",
             "command": "scripts/OpenKNX-Build.ps1",
@@ -92,20 +88,21 @@
             "problemMatcher": []
         },
         {
-            "label": "Build-DEV-Release",
+            "label": "Build-Dev",
             "type": "shell",
             "command": "scripts/Build-Release.ps1", 
             "args": [
+                "Dev"
             ],
             "problemMatcher": [],
             "group": "test"
         },
         {
-            "label": "Build-Release",
+            "label": "Build-Beta",
             "type": "shell",
             "command": "scripts/Build-Release.ps1", 
             "args": [
-                "Release"
+                "Beta"
             ],
             "problemMatcher": [],
             "group": "test"

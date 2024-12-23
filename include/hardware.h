@@ -1,4 +1,5 @@
-
+#pragma once
+#include "HardwareConfig.h"
 
 #ifdef BOARD_REG1_ETH
 
@@ -113,6 +114,14 @@
     #define KNX_UART_TX_PIN 0
 
 #endif
+
+#ifdef OKNXHW_REG1_CONTROLLERESP
+
+    #include "OpenKNXHardware.h"
+   
+#endif
+
+
 
 #ifdef BOARD_REG1_ESP_DEVBOARD_V00_02
     #define HARDWARE_NAME "REG1_ESP_DEV"
