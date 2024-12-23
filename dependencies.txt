@@ -8,5 +8,5 @@ e39c804 v1dev lib/OFM-FileTransferModule https://github.com/OpenKNX/OFM-FileTran
 3868669 v1dev lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
 73598f9 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule.git
 1ce7a13 v1 lib/OFM-UsbExchange https://github.com/OpenKNX/OFM-UsbExchange.git
-6365a3f v1dev-esp32-idf5 lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
+ff991b7 v1dev-improvetime lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
 31b5142 v1 lib/OGM-HardwareConfig https://github.com/OpenKNX/OGM-HardwareConfig.git
