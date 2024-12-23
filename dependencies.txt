@@ -1,5 +1,5 @@
 ------- Built with -------
-d1ab151 v1dev lib/knx https://github.com/OpenKNX/knx.git
+919b8e3 v1dev lib/knx https://github.com/OpenKNX/knx.git
 a6c49a6 v1 lib/OFM-ConfigTransfer https://github.com/OpenKNX/OFM-ConfigTransfer.git
 e39c804 v1dev lib/OFM-FileTransferModule https://github.com/OpenKNX/OFM-FileTransferModule.git
 0025144 feature/blocktype/count+aggregation lib/OFM-FunctionBlocks https://github.com/OpenKNX/OFM-FunctionBlocks.git
@@ -8,5 +8,5 @@ e39c804 v1dev lib/OFM-FileTransferModule https://github.com/OpenKNX/OFM-FileTran
 3868669 v1dev lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
 73598f9 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule.git
 1ce7a13 v1 lib/OFM-UsbExchange https://github.com/OpenKNX/OFM-UsbExchange.git
-4b1a1a1 v1dev-esp32-idf5 lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
+6365a3f v1dev-esp32-idf5 lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
 31b5142 v1 lib/OGM-HardwareConfig https://github.com/OpenKNX/OGM-HardwareConfig.git
