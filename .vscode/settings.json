@@ -65,7 +65,15 @@
         "format": "cpp",
         "span": "cpp",
         "text_encoding": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "charconv": "cpp",
+        "condition_variable": "cpp",
+        "set": "cpp",
+        "netfwd": "cpp",
+        "iostream": "cpp",
+        "mutex": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp"
     },
     "cmake.configureOnOpen": false
 }

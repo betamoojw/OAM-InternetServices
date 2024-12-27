@@ -38,7 +38,7 @@
   <op:define prefix="IW" ModuleType="21"
     share=   "../lib/OFM-InternetWeatherModule/src/InternetWeatherModule.share.xml"
     template="../lib/OFM-InternetWeatherModule/src/InternetWeatherModule.templ.xml"
-    NumChannels="5"
+    NumChannels="60"
     KoSingleOffset="400"
     KoOffset="410">
     <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="%IW_VerifyVersion%" /> 

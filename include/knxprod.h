@@ -10,8 +10,8 @@
                                              
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 45
-#define MAIN_ApplicationVersion 21
-#define MAIN_ParameterSize 8044
+#define MAIN_ApplicationVersion 22
+#define MAIN_ParameterSize 8824
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
 #define BASE_ModuleVersion 19
@@ -20,7 +20,7 @@
 #define IW_ModuleVersion 3
 #define SIP_ModuleVersion 2
 #define LOG_ModuleVersion 53
-#define FCB_ModuleVersion 2
+#define FCB_ModuleVersion 3
 // Parameter with single occurrence
 
 
@@ -2901,7 +2901,7 @@
 
 // Parameter per channel
 #define FCB_ParamBlockOffset 7744
-#define FCB_ParamBlockSize 20
+#define FCB_ParamBlockSize 72
 #define FCB_ParamCalcIndex(index) (index + FCB_ParamBlockOffset + _channelIndex * FCB_ParamBlockSize)
 
 #define FCB_CHChannelType                        0      // 8 Bits, Bit 7-0
@@ -3104,6 +3104,28 @@
 #define FCB_CHAggKo6W                           14      // int8_t
 #define FCB_CHAggKo7W                           15      // int8_t
 #define FCB_CHAggKo8W                           16      // int8_t
+#define FCB_CHCountDownTimeStartKo               2      // 4 Bits, Bit 7-4
+#define     FCB_CHCountDownTimeStartKoMask 0xF0
+#define     FCB_CHCountDownTimeStartKoShift 4
+#define FCB_CHCountDownStartValue                3      // 32_t
+#define FCB_CHCountDownTimeOffset                7      // 4 Bits, Bit 7-4
+#define     FCB_CHCountDownTimeOffsetMask 0xF0
+#define     FCB_CHCountDownTimeOffsetShift 4
+#define FCB_CHCountDownTrigger                   7      // 4 Bits, Bit 3-0
+#define     FCB_CHCountDownTriggerMask 0x0F
+#define     FCB_CHCountDownTriggerShift 0
+#define FCB_CHCountDownTemplate                  8      // char*, 14 Byte
+#define FCB_CHCountDownTemplate1h               23      // char*, 14 Byte
+#define FCB_CHCountDownTemplate1m               38      // char*, 14 Byte
+#define FCB_CHCountDownTemplateEnd              53      // char*, 14 Byte
+#define FCB_CHCountDownTextPause                68      // char*, 1 Byte
+#define FCB_CHCountDownTextRun                  70      // char*, 1 Byte
+#define FCB_CHCountDownCounterKo                 2      // 4 Bits, Bit 7-4
+#define     FCB_CHCountDownCounterKoMask 0xF0
+#define     FCB_CHCountDownCounterKoShift 4
+#define FCB_CHCountDownTextKo                    2      // 2 Bits, Bit 3-2
+#define     FCB_CHCountDownTextKoMask 0x0C
+#define     FCB_CHCountDownTextKoShift 2
 
 // Funktionsblock %C%
 #define ParamFCB_CHChannelType                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHChannelType)))
@@ -3281,6 +3303,30 @@
 #define ParamFCB_CHAggKo7W                           ((int8_t)knx.paramByte(FCB_ParamCalcIndex(FCB_CHAggKo7W)))
 // Gewicht Eingang 9
 #define ParamFCB_CHAggKo8W                           ((int8_t)knx.paramByte(FCB_ParamCalcIndex(FCB_CHAggKo8W)))
+// Start mit Zeit
+#define ParamFCB_CHCountDownTimeStartKo              ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownTimeStartKo)) & FCB_CHCountDownTimeStartKoMask) >> FCB_CHCountDownTimeStartKoShift)
+// Ablauf Zeit
+#define ParamFCB_CHCountDownStartValue               ()
+// Laufzeit Verringern / Erhöhen
+#define ParamFCB_CHCountDownTimeOffset               ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownTimeOffset)) & FCB_CHCountDownTimeOffsetMask) >> FCB_CHCountDownTimeOffsetShift)
+// Auslöser / Ende
+#define ParamFCB_CHCountDownTrigger                  (knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownTrigger)) & FCB_CHCountDownTriggerMask)
+// Standard
+#define ParamFCB_CHCountDownTemplate                 (knx.paramData(FCB_ParamCalcIndex(FCB_CHCountDownTemplate)))
+// kleiner eine Stunde
+#define ParamFCB_CHCountDownTemplate1h               (knx.paramData(FCB_ParamCalcIndex(FCB_CHCountDownTemplate1h)))
+// kleiner eine Minute
+#define ParamFCB_CHCountDownTemplate1m               (knx.paramData(FCB_ParamCalcIndex(FCB_CHCountDownTemplate1m)))
+// Ende
+#define ParamFCB_CHCountDownTemplateEnd              (knx.paramData(FCB_ParamCalcIndex(FCB_CHCountDownTemplateEnd)))
+// Pause
+#define ParamFCB_CHCountDownTextPause                (knx.paramData(FCB_ParamCalcIndex(FCB_CHCountDownTextPause)))
+// Läuft
+#define ParamFCB_CHCountDownTextRun                  (knx.paramData(FCB_ParamCalcIndex(FCB_CHCountDownTextRun)))
+// Zähler
+#define ParamFCB_CHCountDownCounterKo                ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownCounterKo)) & FCB_CHCountDownCounterKoMask) >> FCB_CHCountDownCounterKoShift)
+// Text
+#define ParamFCB_CHCountDownTextKo                   ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownTextKo)) & FCB_CHCountDownTextKoMask) >> FCB_CHCountDownTextKoShift)
 
 // deprecated
 #define FCB_KoOffset 250
@@ -3333,7 +3379,7 @@
 #define BASE_KommentarModuleModuleParamSize 0
 #define BASE_KommentarModuleSubmodulesParamSize 0
 #define BASE_KommentarModuleParamSize 0
-#define BASE_KommentarModuleParamOffset 8044
+#define BASE_KommentarModuleParamOffset 8824
 #define BASE_KommentarModuleCalcIndex(index, m1) (index + BASE_KommentarModuleParamOffset + _channelIndex * BASE_KommentarModuleCount * BASE_KommentarModuleParamSize + m1 * BASE_KommentarModuleParamSize)
 
 
