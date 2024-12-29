@@ -6,7 +6,7 @@ f2df2c4 v1dev lib/OFM-FunctionBlocks https://github.com/OpenKNX/OFM-FunctionBloc
 5a6c62d v1dev lib/OFM-InternetWeatherModule https://github.com/OpenKNX/OFM-InternetWeatherModule.git
 2dbceb4 v1 lib/OFM-LogicModule https://github.com/OpenKNX/OFM-LogicModule.git
 3868669 v1dev lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
-73598f9 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule.git
+3ab09d8 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule.git
 1ce7a13 v1 lib/OFM-UsbExchange https://github.com/OpenKNX/OFM-UsbExchange.git
 208e5b5 v1dev lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
 31b5142 v1 lib/OGM-HardwareConfig https://github.com/OpenKNX/OGM-HardwareConfig.git
