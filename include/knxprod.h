@@ -11,7 +11,7 @@
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 45
 #define MAIN_ApplicationVersion 24
-#define MAIN_ParameterSize 8824
+#define MAIN_ParameterSize 8809
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
 #define BASE_ModuleVersion 19
@@ -20,7 +20,7 @@
 #define IW_ModuleVersion 3
 #define SIP_ModuleVersion 2
 #define LOG_ModuleVersion 53
-#define FCB_ModuleVersion 3
+#define FCB_ModuleVersion 4
 // Parameter with single occurrence
 
 
@@ -2901,7 +2901,7 @@
 
 // Parameter per channel
 #define FCB_ParamBlockOffset 7744
-#define FCB_ParamBlockSize 72
+#define FCB_ParamBlockSize 71
 #define FCB_ParamCalcIndex(index) (index + FCB_ParamBlockOffset + _channelIndex * FCB_ParamBlockSize)
 
 #define FCB_CHChannelType                        0      // 8 Bits, Bit 7-0
@@ -3107,25 +3107,126 @@
 #define FCB_CHCountDownTimeStartKo               2      // 4 Bits, Bit 7-4
 #define     FCB_CHCountDownTimeStartKoMask 0xF0
 #define     FCB_CHCountDownTimeStartKoShift 4
-#define FCB_CHCountDownStartValue                3      // 32_t
-#define FCB_CHCountDownTimeOffset                7      // 4 Bits, Bit 7-4
+#define FCB_CHCountDownDelayBase                 3      // 2 Bits, Bit 7-6
+#define     FCB_CHCountDownDelayBaseMask 0xC0
+#define     FCB_CHCountDownDelayBaseShift 6
+#define FCB_CHCountDownDelayTime                 3      // 14 Bits, Bit 13-0
+#define     FCB_CHCountDownDelayTimeMask 0x3FFF
+#define     FCB_CHCountDownDelayTimeShift 0
+#define FCB_CHCountDownTimeOffset                5      // 4 Bits, Bit 7-4
 #define     FCB_CHCountDownTimeOffsetMask 0xF0
 #define     FCB_CHCountDownTimeOffsetShift 4
-#define FCB_CHCountDownTrigger                   7      // 4 Bits, Bit 3-0
+#define FCB_CHCountDownTrigger                   5      // 4 Bits, Bit 3-0
 #define     FCB_CHCountDownTriggerMask 0x0F
 #define     FCB_CHCountDownTriggerShift 0
-#define FCB_CHCountDownTemplate                  8      // char*, 14 Byte
-#define FCB_CHCountDownTemplate1h               23      // char*, 14 Byte
-#define FCB_CHCountDownTemplate1m               38      // char*, 14 Byte
-#define FCB_CHCountDownTemplateEnd              53      // char*, 14 Byte
-#define FCB_CHCountDownTextPause                68      // char*, 1 Byte
-#define FCB_CHCountDownTextRun                  70      // char*, 1 Byte
-#define FCB_CHCountDownCounterKo                 2      // 4 Bits, Bit 7-4
+#define FCB_CHCountDownTemplate                  6      // char*, 14 Byte
+#define FCB_CHCountDownTemplate1h               21      // char*, 14 Byte
+#define FCB_CHCountDownTemplate1m               36      // char*, 14 Byte
+#define FCB_CHCountDownTemplateEnd              51      // char*, 14 Byte
+#define FCB_CHCountDownTextPause                66      // char*, 1 Byte
+#define FCB_CHCountDownTextRun                  68      // char*, 1 Byte
+#define FCB_CHCountDownCounterKo                70      // 4 Bits, Bit 7-4
 #define     FCB_CHCountDownCounterKoMask 0xF0
 #define     FCB_CHCountDownCounterKoShift 4
-#define FCB_CHCountDownTextKo                    2      // 2 Bits, Bit 3-2
+#define FCB_CHCountDownTextKo                   70      // 2 Bits, Bit 3-2
 #define     FCB_CHCountDownTextKoMask 0x0C
 #define     FCB_CHCountDownTextKoShift 2
+#define FCB_CHMonitoringValueType                2      // 8 Bits, Bit 7-0
+#define FCB_CHMonitoringWDEnabled                3      // 1 Bit, Bit 7
+#define     FCB_CHMonitoringWDEnabledMask 0x80
+#define     FCB_CHMonitoringWDEnabledShift 7
+#define FCB_CHMonitoringWDTTimeoutDelayBase      4      // 2 Bits, Bit 7-6
+#define     FCB_CHMonitoringWDTTimeoutDelayBaseMask 0xC0
+#define     FCB_CHMonitoringWDTTimeoutDelayBaseShift 6
+#define FCB_CHMonitoringWDTTimeoutDelayTime      4      // 14 Bits, Bit 13-0
+#define     FCB_CHMonitoringWDTTimeoutDelayTimeMask 0x3FFF
+#define     FCB_CHMonitoringWDTTimeoutDelayTimeShift 0
+#define FCB_CHMonitoringWDBehavior               6      // 4 Bits, Bit 7-4
+#define     FCB_CHMonitoringWDBehaviorMask 0xF0
+#define     FCB_CHMonitoringWDBehaviorShift 4
+#define FCB_CHMonitoringWDDpt1                   7      // 8 Bits, Bit 7-0
+#define FCB_CHMonitoringWDDpt5                   7      // uint8_t
+#define FCB_CHMonitoringWDDpt5001                7      // uint8_t
+#define FCB_CHMonitoringWDDpt6                   7      // int8_t
+#define FCB_CHMonitoringWDDpt7                   7      // uint16_t
+#define FCB_CHMonitoringWDDpt8                   7      // int16_t
+#define FCB_CHMonitoringWDDpt9                   7      // float
+#define FCB_CHMonitoringWDDpt12                  7      // uint32_t
+#define FCB_CHMonitoringWDDpt13                  7      // int32_t
+#define FCB_CHMonitoringWDDpt14                  7      // float
+#define FCB_CHMonitoringWDDpt16                  7      // char*, 14 Byte
+#define FCB_CHMonitoringMin                     22      // 4 Bits, Bit 7-4
+#define     FCB_CHMonitoringMinMask 0xF0
+#define     FCB_CHMonitoringMinShift 4
+#define FCB_CHMonitoringMinDpt1                 23      // 1 Bit, Bit 7
+#define     FCB_CHMonitoringMinDpt1Mask 0x80
+#define     FCB_CHMonitoringMinDpt1Shift 7
+#define FCB_CHMonitoringMinDpt5                 23      // uint8_t
+#define FCB_CHMonitoringMinDpt5001              23      // uint8_t
+#define FCB_CHMonitoringMinDpt6                 23      // int8_t
+#define FCB_CHMonitoringMinDpt7                 23      // uint16_t
+#define FCB_CHMonitoringMinDpt8                 23      // int16_t
+#define FCB_CHMonitoringMinDpt9                 23      // float
+#define FCB_CHMonitoringMinDpt12                23      // uint32_t
+#define FCB_CHMonitoringMinDpt13                23      // int32_t
+#define FCB_CHMonitoringMinDpt14                23      // float
+#define FCB_CHMonitoringMax                     27      // 4 Bits, Bit 7-4
+#define     FCB_CHMonitoringMaxMask 0xF0
+#define     FCB_CHMonitoringMaxShift 4
+#define FCB_CHMonitoringMaxDpt1                 28      // 1 Bit, Bit 7
+#define     FCB_CHMonitoringMaxDpt1Mask 0x80
+#define     FCB_CHMonitoringMaxDpt1Shift 7
+#define FCB_CHMonitoringMaxDpt5                 28      // uint8_t
+#define FCB_CHMonitoringMaxDpt5001              28      // uint8_t
+#define FCB_CHMonitoringMaxDpt6                 28      // int8_t
+#define FCB_CHMonitoringMaxDpt7                 28      // uint16_t
+#define FCB_CHMonitoringMaxDpt8                 28      // int16_t
+#define FCB_CHMonitoringMaxDpt9                 28      // float
+#define FCB_CHMonitoringMaxDpt12                28      // uint32_t
+#define FCB_CHMonitoringMaxDpt13                28      // int32_t
+#define FCB_CHMonitoringMaxDpt14                28      // float
+#define FCB_CHMonitoringOutput                  32      // 4 Bits, Bit 7-4
+#define     FCB_CHMonitoringOutputMask 0xF0
+#define     FCB_CHMonitoringOutputShift 4
+#define FCB_CHSelectionValueType                 2      // 8 Bits, Bit 7-0
+#define FCB_CHSelectionType                      3      // 8 Bits, Bit 7-0
+#define FCB_CHSelectionSwitching                 4      // 4 Bits, Bit 7-4
+#define     FCB_CHSelectionSwitchingMask 0xF0
+#define     FCB_CHSelectionSwitchingShift 4
+#define FCB_CHSelectionStateOutput               4      // 1 Bit, Bit 3
+#define     FCB_CHSelectionStateOutputMask 0x08
+#define     FCB_CHSelectionStateOutputShift 3
+#define FCB_CHBlinkerOnDelayBase                 4      // 2 Bits, Bit 7-6
+#define     FCB_CHBlinkerOnDelayBaseMask 0xC0
+#define     FCB_CHBlinkerOnDelayBaseShift 6
+#define FCB_CHBlinkerOnDelayTime                 4      // 14 Bits, Bit 13-0
+#define     FCB_CHBlinkerOnDelayTimeMask 0x3FFF
+#define     FCB_CHBlinkerOnDelayTimeShift 0
+#define FCB_CHBlinkerOffDelayBase                6      // 2 Bits, Bit 7-6
+#define     FCB_CHBlinkerOffDelayBaseMask 0xC0
+#define     FCB_CHBlinkerOffDelayBaseShift 6
+#define FCB_CHBlinkerOffDelayTime                6      // 14 Bits, Bit 13-0
+#define     FCB_CHBlinkerOffDelayTimeMask 0x3FFF
+#define     FCB_CHBlinkerOffDelayTimeShift 0
+#define FCB_CHBlinkerStart                       8      // 4 Bits, Bit 7-4
+#define     FCB_CHBlinkerStartMask 0xF0
+#define     FCB_CHBlinkerStartShift 4
+#define FCB_CHBlinkerStop                        8      // 4 Bits, Bit 3-0
+#define     FCB_CHBlinkerStopMask 0x0F
+#define     FCB_CHBlinkerStopShift 0
+#define FCB_CHBlinkerBreak                       9      // 4 Bits, Bit 7-4
+#define     FCB_CHBlinkerBreakMask 0xF0
+#define     FCB_CHBlinkerBreakShift 4
+#define FCB_CHBlinkerBreakWithoutBreak           9      // 4 Bits, Bit 7-4
+#define     FCB_CHBlinkerBreakWithoutBreakMask 0xF0
+#define     FCB_CHBlinkerBreakWithoutBreakShift 4
+#define FCB_CHBlinkerOutputDpt                   9      // 8 Bits, Bit 3--4
+#define FCB_CHBlinkerOnPercentage               10      // uint8_t
+#define FCB_CHBlinkerOffPercentage              11      // uint8_t
+#define FCB_CHBlinkerCount                      12      // 8 Bits, Bit 7-0
+#define FCB_CHBlinkerStartAnzahl                13      // 1 Bit, Bit 7
+#define     FCB_CHBlinkerStartAnzahlMask 0x80
+#define     FCB_CHBlinkerStartAnzahlShift 7
 
 // Funktionsblock %C%
 #define ParamFCB_CHChannelType                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHChannelType)))
@@ -3305,8 +3406,12 @@
 #define ParamFCB_CHAggKo8W                           ((int8_t)knx.paramByte(FCB_ParamCalcIndex(FCB_CHAggKo8W)))
 // Start mit Zeit
 #define ParamFCB_CHCountDownTimeStartKo              ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownTimeStartKo)) & FCB_CHCountDownTimeStartKoMask) >> FCB_CHCountDownTimeStartKoShift)
-// Ablauf Zeit
-#define ParamFCB_CHCountDownStartValue               ()
+// Ablaufzeit Einheit
+#define ParamFCB_CHCountDownDelayBase                ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownDelayBase)) & FCB_CHCountDownDelayBaseMask) >> FCB_CHCountDownDelayBaseShift)
+// Ablaufzeit
+#define ParamFCB_CHCountDownDelayTime                (knx.paramWord(FCB_ParamCalcIndex(FCB_CHCountDownDelayTime)) & FCB_CHCountDownDelayTimeMask)
+// Ablaufzeit (in Millisekunden)
+#define ParamFCB_CHCountDownDelayTimeMS              (paramDelay(knx.paramWord(FCB_ParamCalcIndex(FCB_CHCountDownDelayTime))))
 // Laufzeit Verringern / Erhöhen
 #define ParamFCB_CHCountDownTimeOffset               ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownTimeOffset)) & FCB_CHCountDownTimeOffsetMask) >> FCB_CHCountDownTimeOffsetShift)
 // Auslöser / Ende
@@ -3327,6 +3432,124 @@
 #define ParamFCB_CHCountDownCounterKo                ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownCounterKo)) & FCB_CHCountDownCounterKoMask) >> FCB_CHCountDownCounterKoShift)
 // Text
 #define ParamFCB_CHCountDownTextKo                   ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHCountDownTextKo)) & FCB_CHCountDownTextKoMask) >> FCB_CHCountDownTextKoShift)
+// Werttype
+#define ParamFCB_CHMonitoringValueType               (knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringValueType)))
+// Zeitüberwachung aktiv
+#define ParamFCB_CHMonitoringWDEnabled               ((bool)(knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringWDEnabled)) & FCB_CHMonitoringWDEnabledMask))
+// Watchdog Zeitbasis
+#define ParamFCB_CHMonitoringWDTTimeoutDelayBase     ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringWDTTimeoutDelayBase)) & FCB_CHMonitoringWDTTimeoutDelayBaseMask) >> FCB_CHMonitoringWDTTimeoutDelayBaseShift)
+// Watchdog Zeit
+#define ParamFCB_CHMonitoringWDTTimeoutDelayTime     (knx.paramWord(FCB_ParamCalcIndex(FCB_CHMonitoringWDTTimeoutDelayTime)) & FCB_CHMonitoringWDTTimeoutDelayTimeMask)
+// Watchdog Zeit (in Millisekunden)
+#define ParamFCB_CHMonitoringWDTTimeoutDelayTimeMS   (paramDelay(knx.paramWord(FCB_ParamCalcIndex(FCB_CHMonitoringWDTTimeoutDelayTime))))
+// Verhalten bei Zeitüberschreitung
+#define ParamFCB_CHMonitoringWDBehavior              ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringWDBehavior)) & FCB_CHMonitoringWDBehaviorMask) >> FCB_CHMonitoringWDBehaviorShift)
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt1                  (knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt1)))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt5                  (knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt5)))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt5001               (knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt5001)))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt6                  ((int8_t)knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt6)))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt7                  (knx.paramWord(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt7)))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt8                  ((int16_t)knx.paramWord(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt8)))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt9                  (knx.paramFloat(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt9), Float_Enc_IEEE754Single))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt12                 (knx.paramInt(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt12)))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt13                 ((int32_t)knx.paramInt(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt13)))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt14                 (knx.paramFloat(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt14), Float_Enc_IEEE754Single))
+// Ersatzwert
+#define ParamFCB_CHMonitoringWDDpt16                 (knx.paramData(FCB_ParamCalcIndex(FCB_CHMonitoringWDDpt16)))
+// Verhalten bei Wertunterschreitung
+#define ParamFCB_CHMonitoringMin                     ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMin)) & FCB_CHMonitoringMinMask) >> FCB_CHMonitoringMinShift)
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt1                 ((bool)(knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt1)) & FCB_CHMonitoringMinDpt1Mask))
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt5                 (knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt5)))
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt5001              (knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt5001)))
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt6                 ((int8_t)knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt6)))
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt7                 (knx.paramWord(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt7)))
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt8                 ((int16_t)knx.paramWord(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt8)))
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt9                 (knx.paramFloat(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt9), Float_Enc_IEEE754Single))
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt12                (knx.paramInt(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt12)))
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt13                ((int32_t)knx.paramInt(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt13)))
+// Minimaler zulässiger Wert
+#define ParamFCB_CHMonitoringMinDpt14                (knx.paramFloat(FCB_ParamCalcIndex(FCB_CHMonitoringMinDpt14), Float_Enc_IEEE754Single))
+// Verhalten bei Wertüberschreitung
+#define ParamFCB_CHMonitoringMax                     ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMax)) & FCB_CHMonitoringMaxMask) >> FCB_CHMonitoringMaxShift)
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt1                 ((bool)(knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt1)) & FCB_CHMonitoringMaxDpt1Mask))
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt5                 (knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt5)))
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt5001              (knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt5001)))
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt6                 ((int8_t)knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt6)))
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt7                 (knx.paramWord(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt7)))
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt8                 ((int16_t)knx.paramWord(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt8)))
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt9                 (knx.paramFloat(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt9), Float_Enc_IEEE754Single))
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt12                (knx.paramInt(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt12)))
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt13                ((int32_t)knx.paramInt(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt13)))
+// Maximaler zulässiger Wert
+#define ParamFCB_CHMonitoringMaxDpt14                (knx.paramFloat(FCB_ParamCalcIndex(FCB_CHMonitoringMaxDpt14), Float_Enc_IEEE754Single))
+// Sendeverhalten
+#define ParamFCB_CHMonitoringOutput                  ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHMonitoringOutput)) & FCB_CHMonitoringOutputMask) >> FCB_CHMonitoringOutputShift)
+// Datentype
+#define ParamFCB_CHSelectionValueType                (knx.paramByte(FCB_ParamCalcIndex(FCB_CHSelectionValueType)))
+// Anzahl und Typ der Auswahlen (mit gemeinsamen Auswahl-Eingang)
+#define ParamFCB_CHSelectionType                     (knx.paramByte(FCB_ParamCalcIndex(FCB_CHSelectionType)))
+// Bei Umschaltung
+#define ParamFCB_CHSelectionSwitching                ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHSelectionSwitching)) & FCB_CHSelectionSwitchingMask) >> FCB_CHSelectionSwitchingShift)
+// Auswahl Status Objekt
+#define ParamFCB_CHSelectionStateOutput              ((bool)(knx.paramByte(FCB_ParamCalcIndex(FCB_CHSelectionStateOutput)) & FCB_CHSelectionStateOutputMask))
+// Blinker EIN Zeitbasis
+#define ParamFCB_CHBlinkerOnDelayBase                ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerOnDelayBase)) & FCB_CHBlinkerOnDelayBaseMask) >> FCB_CHBlinkerOnDelayBaseShift)
+// Blinker EIN Zeit
+#define ParamFCB_CHBlinkerOnDelayTime                (knx.paramWord(FCB_ParamCalcIndex(FCB_CHBlinkerOnDelayTime)) & FCB_CHBlinkerOnDelayTimeMask)
+// Blinker EIN Zeit (in Millisekunden)
+#define ParamFCB_CHBlinkerOnDelayTimeMS              (paramDelay(knx.paramWord(FCB_ParamCalcIndex(FCB_CHBlinkerOnDelayTime))))
+// Blinker AUS Zeitbasis
+#define ParamFCB_CHBlinkerOffDelayBase               ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerOffDelayBase)) & FCB_CHBlinkerOffDelayBaseMask) >> FCB_CHBlinkerOffDelayBaseShift)
+// Blinker AUS Zeit
+#define ParamFCB_CHBlinkerOffDelayTime               (knx.paramWord(FCB_ParamCalcIndex(FCB_CHBlinkerOffDelayTime)) & FCB_CHBlinkerOffDelayTimeMask)
+// Blinker AUS Zeit (in Millisekunden)
+#define ParamFCB_CHBlinkerOffDelayTimeMS             (paramDelay(knx.paramWord(FCB_ParamCalcIndex(FCB_CHBlinkerOffDelayTime))))
+// Start
+#define ParamFCB_CHBlinkerStart                      ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerStart)) & FCB_CHBlinkerStartMask) >> FCB_CHBlinkerStartShift)
+// Ende
+#define ParamFCB_CHBlinkerStop                       (knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerStop)) & FCB_CHBlinkerStopMask)
+// AUS Telegram am 'Start' Eingang
+#define ParamFCB_CHBlinkerBreak                      ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerBreak)) & FCB_CHBlinkerBreakMask) >> FCB_CHBlinkerBreakShift)
+// AUS Telegram am 'Start' Eingang
+#define ParamFCB_CHBlinkerBreakWithoutBreak          ((knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerBreakWithoutBreak)) & FCB_CHBlinkerBreakWithoutBreakMask) >> FCB_CHBlinkerBreakWithoutBreakShift)
+// Ausgang
+#define ParamFCB_CHBlinkerOutputDpt                  (knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerOutputDpt)))
+// Wert für EIN
+#define ParamFCB_CHBlinkerOnPercentage               (knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerOnPercentage)))
+// Wert für AUS
+#define ParamFCB_CHBlinkerOffPercentage              (knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerOffPercentage)))
+// Anzahl der Blinkvorgänge
+#define ParamFCB_CHBlinkerCount                      (knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerCount)))
+// Objekt zum Starten mit Anzahl
+#define ParamFCB_CHBlinkerStartAnzahl                ((bool)(knx.paramByte(FCB_ParamCalcIndex(FCB_CHBlinkerStartAnzahl)) & FCB_CHBlinkerStartAnzahlMask))
 
 // deprecated
 #define FCB_KoOffset 250
@@ -3379,7 +3602,7 @@
 #define BASE_KommentarModuleModuleParamSize 0
 #define BASE_KommentarModuleSubmodulesParamSize 0
 #define BASE_KommentarModuleParamSize 0
-#define BASE_KommentarModuleParamOffset 8824
+#define BASE_KommentarModuleParamOffset 8809
 #define BASE_KommentarModuleCalcIndex(index, m1) (index + BASE_KommentarModuleParamOffset + _channelIndex * BASE_KommentarModuleCount * BASE_KommentarModuleParamSize + m1 * BASE_KommentarModuleParamSize)
 
 

@@ -25,9 +25,6 @@ AutoConnectConfig config;
 
 void setup()
 {
-#ifdef OPENKNX_CUSTOM_MASK_VERSION
-    knx.bau().deviceObject().maskVersion(OPENKNX_CUSTOM_MASK_VERSION);
-#endif
     const uint8_t firmwareRevision = 1;
     openknx.init(firmwareRevision);
 #ifdef WLAN_WifiSSID    
