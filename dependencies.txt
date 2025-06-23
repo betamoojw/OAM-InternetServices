@@ -3,10 +3,10 @@ aa61263 v1dev lib/knx https://github.com/OpenKNX/knx.git
 26fe5b9 v1dev lib/OFM-ConfigTransfer https://github.com/OpenKNX/OFM-ConfigTransfer.git
 ac39398 v1dev lib/OFM-FileTransferModule https://github.com/OpenKNX/OFM-FileTransferModule.git
 b475e75 v1dev lib/OFM-FunctionBlocks https://github.com/OpenKNX/OFM-FunctionBlocks.git
-7a88298 v1dev lib/OFM-InternetWeatherModule https://github.com/OpenKNX/OFM-InternetWeatherModule.git
+052aae2 v1dev lib/OFM-InternetWeatherModule https://github.com/OpenKNX/OFM-InternetWeatherModule.git
 5f41886 v1dev lib/OFM-LogicModule https://github.com/OpenKNX/OFM-LogicModule.git
 7cfcb7b v1dev lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
-3ab09d8 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule.git
+375620d v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule.git
 6e49286 v1 lib/OFM-UsbExchange https://github.com/OpenKNX/OFM-UsbExchange.git
-8804cfc v1dev lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
+f1b1bdf v1dev lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
 622e71c v1 lib/OGM-HardwareConfig https://github.com/OpenKNX/OGM-HardwareConfig.git
