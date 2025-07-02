@@ -9,8 +9,8 @@
                                          (time & 0x3FFF) * 3600000 ) : 0 )
                                              
 #define MAIN_OpenKnxId 0xAE
-#define MAIN_ApplicationNumber 46
-#define MAIN_ApplicationVersion 9
+#define MAIN_ApplicationNumber 45
+#define MAIN_ApplicationVersion 27
 #define MAIN_ParameterSize 8996
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
@@ -236,7 +236,7 @@
 #define ParamIW_TextPrefixDayCurrent                (knx.paramData(IW_TextPrefixDayCurrent))
 // Nächster Tag
 #define ParamIW_TextPrefixDayNext                   (knx.paramData(IW_TextPrefixDayNext))
-// Sonne
+// Wolkenlos
 #define ParamIW_TextSun                             (knx.paramData(IW_TextSun))
 // Wolken
 #define ParamIW_TextClouds                          (knx.paramData(IW_TextClouds))
