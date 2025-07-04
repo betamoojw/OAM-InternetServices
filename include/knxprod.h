@@ -9,17 +9,17 @@
                                          (time & 0x3FFF) * 3600000 ) : 0 )
                                              
 #define MAIN_OpenKnxId 0xAE
-#define MAIN_ApplicationNumber 45
-#define MAIN_ApplicationVersion 27
+#define MAIN_ApplicationNumber 46
+#define MAIN_ApplicationVersion 16
 #define MAIN_ParameterSize 8996
 #define MAIN_MaxKoNumber 984
 #define MAIN_OrderNumber "MGKnxINET"
-#define BASE_ModuleVersion 19
-#define NET_ModuleVersion 4
-#define UCT_ModuleVersion 3
+#define BASE_ModuleVersion 20
+#define NET_ModuleVersion 5
+#define UCT_ModuleVersion 4
 #define IW_ModuleVersion 4
 #define SIP_ModuleVersion 2
-#define LOG_ModuleVersion 54
+#define LOG_ModuleVersion 55
 #define FCB_ModuleVersion 5
 // Parameter with single occurrence
 
