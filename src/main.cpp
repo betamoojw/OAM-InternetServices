@@ -25,16 +25,15 @@ AutoConnectConfig config;
 
 void setup()
 {
-    const uint8_t firmwareRevision = 1;
+    const uint8_t firmwareRevision = 0;
     openknx.init(firmwareRevision);
 #ifdef WLAN_WifiSSID    
     openknx.addModule(1, openknxWLANModule);
 #endif
 #ifdef NET_ModuleVersion
-    openknx.addModule(1, openknxNetwork);
+    openknx.addModule(2, openknxNetwork);
 #endif    
-    openknx.addModule(2, openknxLogic);
-    openknx.addModule(3, openknxInternetWeatherModule);
+    openknx.addModule(1, openknxLogic);
 #ifdef ARDUINO_ARCH_RP2040
     openknx.addModule(5, openknxUsbExchangeModule);
 #endif

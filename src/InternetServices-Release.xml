@@ -12,25 +12,23 @@
     ApplicationRevision="0"
     ProductName="Internet Dienste"
     BusCurrent="30"
-    BuildSuffix="-Beta"
-    BuildSuffixText=" (Beta)"
+    BuildSuffix=""
+    BuildSuffixText=""
+    MediumTypes="MT-0 MT-5"
     OrderNumber="MGKnxINET" />
+
 
   <op:define prefix="BASE" ModuleType="10"
     share="../lib/OGM-Common/src/Common.share.xml">
-    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" /> 
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
   </op:define>
 
-  <op:define prefix="NET" ModuleType="12" 
+  <op:define prefix="NET" ModuleType="12"
     share="../lib/OFM-Network/src/Network.share.xml">
-    <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="%NET_VerifyVersion%" /> 
+    <op:verify File="../lib/OFM-Network/library.json" ModuleVersion="%NET_VerifyVersion%" />
   </op:define>
 
-  <!-- <op:define prefix="WLAN" ModuleType="12" 
-    share="WLAN.share.xml"
-    KoSingleOffset="20" /> -->
-
-    <op:define prefix="UCT" share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
+  <op:define prefix="UCT" share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
     ModuleType="13">
     <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="%UCT_VerifyVersion%" />
   </op:define>
@@ -42,7 +40,7 @@
     KoSingleOffset="400"
     KoOffset="410">
     <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="%IW_VerifyVersion%" /> 
-    </op:define>
+  </op:define>
 
   <op:define prefix="SIP" ModuleType="22"
     share="../lib/OFM-SIPClientModule/src/SIPClientModule.share.xml"
@@ -51,7 +49,7 @@
     KoSingleOffset="985"
     KoOffset="980">
     <op:verify File="../lib/OFM-SIPClientModule/library.json" ModuleVersion="%SIP_VerifyVersion%" />
-    </op:define>
+  </op:define>
 
   <op:define prefix="LOG" ModuleType="10" 
     share="../lib/OFM-LogicModule/src/Logikmodul.share.xml" 

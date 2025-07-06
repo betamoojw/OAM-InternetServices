@@ -25,9 +25,35 @@
 # $settings = scripts/OpenKNX-Build-Settings.ps1
 
 # execute generic pre-build steps
-../OGM-Common/scripts/setup/reusable/Build-Release-Preprocess.ps1 $args[0]
+lib/OGM-Common/scripts/setup/reusable/Build-Release-Preprocess.ps1 $args[0]
 if (!$?) { exit 1 }
 
-# execute generic post-build steps
-../OGM-Common/scripts/setup/reusable/Build-Release-Postprocess.ps1 $args[0]
+# build firmware based on generated headerfile 
+# the following build steps are project specific and must be adopted accordingly
+# see comment in Build-Step.ps1 for argument description
+
+# Example call, the following 2 lines might be there multiple times for each firmware which should be built
+# ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_ETH SmartHomeBridge-Eth uf2
+# if (!$?) { exit 1 }
+
+
+
+
+../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_ETH firmware-InternetServices-REG1-ETH uf2
+ if (!$?) { exit 1 }
+
+ ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_LAN_TP_BASE firmware-InternetServices-REG1-LAN-TP-Base esp32
+ if (!$?) { exit 1 }
+
+ ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_LAN_BASE firmware-InternetServices-REG1-LAN-Base esp32
+ if (!$?) { exit 1 }
+
+ ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_TP firmware-InternetServices-Adafruit_Feather_ESP32_V2_TP esp32
+ if (!$?) { exit 1 }
+
+ ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_IP firmware-InternetServices-Adafruit_Feather_ESP32_V2_IP esp32
+ if (!$?) { exit 1 }
+
+ # execute generic post-build steps
+lib/OGM-Common/scripts/setup/reusable/Build-Release-Postprocess.ps1 $args[0]
 if (!$?) { exit 1 }
