@@ -25,8 +25,7 @@ AutoConnectConfig config;
 
 void setup()
 {
-    const uint8_t firmwareRevision = 0;
-    openknx.init(firmwareRevision);
+    openknx.init();
 #ifdef WLAN_WifiSSID    
     openknx.addModule(1, openknxWLANModule);
 #endif

@@ -16,12 +16,11 @@
 #define ETS_ModuleId_SIP 5
 #define ETS_ModuleId_LOG 6
 #define ETS_ModuleId_FCB 7
-#ifndef FIRMWARE_NAME
-    #define FIRMWARE_NAME "Internet Dienste"
-#endif
+#define MAIN_FirmwareName "Internet Dienste"
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 46
 #define MAIN_ApplicationVersion 17
+#define MAIN_FirmwareRevision 0
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 9000
 #define MAIN_MaxKoNumber 985
@@ -3803,3 +3802,13 @@
 
 
 
+#ifdef MAIN_FirmwareRevision
+#ifndef FIRMWARE_REVISION
+#define FIRMWARE_REVISION MAIN_FirmwareRevision
+#endif
+#endif
+#ifdef MAIN_FirmwareName
+#ifndef FIRMWARE_NAME
+#define FIRMWARE_NAME MAIN_FirmwareName
+#endif
+#endif
