@@ -16,10 +16,10 @@
 #define ETS_ModuleId_SIP 5
 #define ETS_ModuleId_LOG 6
 #define ETS_ModuleId_FCB 7
-#define MAIN_FirmwareName "Internet Dienste (Dev)"
+#define MAIN_FirmwareName "Internet Dienste"
 #define MAIN_OpenKnxId 0xAE
-#define MAIN_ApplicationNumber 45
-#define MAIN_ApplicationVersion 31
+#define MAIN_ApplicationNumber 46
+#define MAIN_ApplicationVersion 18
 #define MAIN_FirmwareRevision 0
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 9243
@@ -27,10 +27,10 @@
 #define MAIN_OrderNumber "MGKnxINET"
 #define BASE_ModuleVersion 23
 #define NET_ModuleVersion 5
-#define UCT_ModuleVersion 4
+#define UCT_ModuleVersion 5
 #define IW_ModuleVersion 5
 #define SIP_ModuleVersion 3
-#define LOG_ModuleVersion 58
+#define LOG_ModuleVersion 64
 #define FCB_ModuleVersion 9
 // Parameter with single occurrence
 
@@ -91,7 +91,7 @@
 #define BASE_Info1LedFunc                        80      // 16 Bits, Bit 15-0
 #define BASE_Info2LedFunc                        82      // 16 Bits, Bit 15-0
 #define BASE_Info3LedFunc                        84      // 16 Bits, Bit 15-0
-#define BASE_DefaultLedFunc                      85      // 1 Bit, Bit 7
+#define BASE_DefaultLedFunc                      86      // 1 Bit, Bit 7
 #define     BASE_DefaultLedFuncMask 0x80
 #define     BASE_DefaultLedFuncShift 7
 #define BASE_Dummy                               109      // uint8_t
