@@ -9,6 +9,7 @@
     ApplicationNumber="0x2E"
     ApplicationVersion="%ReleaseApplicationVersion%"
     ReplacesVersions="%ReleaseReplacesVersions%"
+    UpdateLibraryJson="true"
     ApplicationRevision="0"
     ProductName="Internet Dienste"
     BusCurrent="30"
