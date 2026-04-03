@@ -46,8 +46,8 @@
     share="../lib/OFM-SIPClientModule/src/SIPClientModule.share.xml"
     template="../lib/OFM-SIPClientModule/src/SIPClientModule.templ.xml"
     NumChannels="5"
-    KoSingleOffset="985"
-    KoOffset="980">
+    KoSingleOffset="1495"
+    KoOffset="1490">
     <op:verify File="../lib/OFM-SIPClientModule/library.json" ModuleVersion="%SIP_VerifyVersion%" />
   </op:define>
 

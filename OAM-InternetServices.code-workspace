@@ -4,10 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "./lib/OFM-InternetWeatherModule"
+			"path": "../OFM-InternetWeatherModule"
 		},
 		{
-			"path": "./lib/OFM-SIPClientModule"
+			"path": "../OFM-SIPClientModule"
 		},
 		{
 			"path": "./lib/OFM-Network"
@@ -20,6 +20,27 @@
 		},
 		{
 			"path": "../OFM-FunctionBlocks"
+		},
+		{
+			"path": "../knx"
+		},
+		{
+			"path": "../OFM-ConfigTransfer"
+		},
+		{
+			"path": "../OFM-FileTransferModule"
+		},
+		{
+			"path": "../OFM-UsbExchange"
+		},
+		{
+			"path": "../OGM-Common"
+		},
+		{
+			"path": "../OGM-HardwareConfig"
+		},
+		{
+			"path": "../OFM-LogicModule"
 		}
 	],
 	"settings": {
@@ -27,17 +48,5 @@
 		"C_Cpp.autoAddFileAssociations": false,
 		"files.associations": {
 			"new": "cpp"
-		},
-		"workbench.colorCustomizations": {
-			"titleBar.background": "#000",
-			"titleBar.border": "#ccf",
-			"titleBar.activeBackground": "#ccf",
-			"titleBar.activeForeground": "#000",
-			"statusBar.background": "#ccf",
-			"statusBar.foreground": "#000",
-			"activityBar.background": "#99c",
-			"activityBar.activeBackground": "#ccf",
-			"activityBar.activeForeground": "#000",
-		}
 	}
-}
+}}
