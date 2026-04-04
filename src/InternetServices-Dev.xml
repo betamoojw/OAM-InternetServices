@@ -7,7 +7,7 @@
   <op:ETS
     OpenKnxId="0xAE"
     ApplicationNumber="0x2D"
-    ApplicationVersion="1.16.0"
+    ApplicationVersion="2.0.0"
     ReplacesVersions="1.15 1.14 1.13 1.12 1.11 1.10 1.9 1.8 1.7 1.6 1.5 1.4 1.3 1.2 1.1 1.0 0.15 0.14 0.13 0.12 0.11 0.10 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1 0.0"
     ApplicationRevision="0"
     ProductName="Internet Dienste"
@@ -64,6 +64,24 @@
     NumChannels="15" 
     KoOffset="250">
     <op:verify File="../lib/OFM-FunctionBlocks/library.json" ModuleVersion="%FCB_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="EP" ModuleType="23"
+    share="../lib/OFM-EnergyPriceModule/src/EnergyPriceModule.share.xml"
+    template="../lib/OFM-EnergyPriceModule/src/EnergyPriceModule.templ.xml"
+    NumChannels="3"
+    KoSingleOffset="1496"
+    KoOffset="1497">
+    <op:verify File="../lib/OFM-EnergyPriceModule/library.json" ModuleVersion="%EP_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="PVF" ModuleType="24"
+    share="../lib/OFM-PVForecastModule/src/PVForecastModule.share.xml"
+    template="../lib/OFM-PVForecastModule/src/PVForecastModule.templ.xml"
+    NumChannels="3"
+    KoSingleOffset="1518"
+    KoOffset="1519">
+    <op:verify File="../lib/OFM-PVForecastModule/library.json" ModuleVersion="%PVF_VerifyVersion%" />
   </op:define>
 
   <generate />
