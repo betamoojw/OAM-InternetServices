@@ -41,6 +41,12 @@
 		},
 		{
 			"path": "../OFM-LogicModule"
+		},
+		{
+			"path": "../OFM-EnergyPriceModule"
+		},
+		{
+			"path": "../OFM-PVForecastModule"
 		}
 	],
 	"settings": {
