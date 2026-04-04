@@ -16,14 +16,16 @@
 #define ETS_ModuleId_SIP 5
 #define ETS_ModuleId_LOG 6
 #define ETS_ModuleId_FCB 7
+#define ETS_ModuleId_EP 8
+#define ETS_ModuleId_PVF 9
 #define MAIN_FirmwareName "Internet Dienste (Beta)"
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 46
 #define MAIN_ApplicationVersion 19
 #define MAIN_FirmwareRevision 1
 #define MAIN_ApplicationEncoding iso-8859-15
-#define MAIN_ParameterSize 9278
-#define MAIN_MaxKoNumber 1495
+#define MAIN_ParameterSize 9337
+#define MAIN_MaxKoNumber 1536
 #define MAIN_OrderNumber "MGKnxINET"
 #define BASE_ModuleVersion 23
 #define NET_ModuleVersion 5
@@ -32,6 +34,8 @@
 #define SIP_ModuleVersion 3
 #define LOG_ModuleVersion 64
 #define FCB_ModuleVersion 9
+#define EP_ModuleVersion 1
+#define PVF_ModuleVersion 1
 // Parameter with single occurrence
 
 
@@ -113,6 +117,12 @@
 #define BASE_ModuleEnabled_FCB                   110      // 1 Bit, Bit 1
 #define     BASE_ModuleEnabled_FCBMask 0x02
 #define     BASE_ModuleEnabled_FCBShift 1
+#define BASE_ModuleEnabled_EP                    110      // 1 Bit, Bit 0
+#define     BASE_ModuleEnabled_EPMask 0x01
+#define     BASE_ModuleEnabled_EPShift 0
+#define BASE_ModuleEnabled_PVF                   111      // 1 Bit, Bit 7
+#define     BASE_ModuleEnabled_PVFMask 0x80
+#define     BASE_ModuleEnabled_PVFShift 7
 
 // Zeitbasis
 #define ParamBASE_StartupDelayBase                    ((knx.paramByte(BASE_StartupDelayBase) & BASE_StartupDelayBaseMask) >> BASE_StartupDelayBaseShift)
@@ -181,6 +191,10 @@
 #define ParamBASE_ModuleEnabled_LOG                   ((bool)(knx.paramByte(BASE_ModuleEnabled_LOG) & BASE_ModuleEnabled_LOGMask))
 // FCB
 #define ParamBASE_ModuleEnabled_FCB                   ((bool)(knx.paramByte(BASE_ModuleEnabled_FCB) & BASE_ModuleEnabled_FCBMask))
+// EP
+#define ParamBASE_ModuleEnabled_EP                    ((bool)(knx.paramByte(BASE_ModuleEnabled_EP) & BASE_ModuleEnabled_EPMask))
+// PVF
+#define ParamBASE_ModuleEnabled_PVF                   ((bool)(knx.paramByte(BASE_ModuleEnabled_PVF) & BASE_ModuleEnabled_PVFMask))
 
 #define BASE_KoHeartbeat 1
 #define BASE_KoTime 2
@@ -4819,6 +4833,148 @@
 // 
 #define KoFCB_CHKO9                               (knx.getGroupObject(FCB_KoCalcNumber(FCB_KoCHKO9)))
 
+#define EP_VisibleChannels                     9278      // uint8_t
+
+// Verfügbare Kanäle
+#define ParamEP_VisibleChannels                     (knx.paramByte(EP_VisibleChannels))
+
+#define EP_KoRefreshData 1496
+
+// Strompreis aktualisieren
+#define KoEP_RefreshData                         (knx.getGroupObject(EP_KoRefreshData))
+
+#define EP_ChannelCount 3
+
+// Parameter per channel
+#define EP_ParamBlockOffset 9279
+#define EP_ParamBlockSize 8
+#define EP_ParamCalcIndex(index) (index + EP_ParamBlockOffset + _channelIndex * EP_ParamBlockSize)
+
+#define EP_CHProviderType                       0      // 8 Bits, Bit 7-0
+#define EP_CHCountry                            1      // 8 Bits, Bit 7-0
+#define EP_CHRefreshInterval                    2      // 8 Bits, Bit 7-0
+#define EP_CHPriceLevelCheap                    3      // uint16_t
+#define EP_CHPriceLevelExpensive                5      // uint16_t
+#define EP_CHCheapestWindowHours                7      // uint8_t
+
+// Strompreisanbieter
+#define ParamEP_CHProviderType                      (knx.paramByte(EP_ParamCalcIndex(EP_CHProviderType)))
+// Land
+#define ParamEP_CHCountry                           (knx.paramByte(EP_ParamCalcIndex(EP_CHCountry)))
+// Automatische Aktualisierung
+#define ParamEP_CHRefreshInterval                   (knx.paramByte(EP_ParamCalcIndex(EP_CHRefreshInterval)))
+// Günstig bis (ct/kWh × 10)
+#define ParamEP_CHPriceLevelCheap                   (knx.paramWord(EP_ParamCalcIndex(EP_CHPriceLevelCheap)))
+// Teuer ab (ct/kWh × 10)
+#define ParamEP_CHPriceLevelExpensive               (knx.paramWord(EP_ParamCalcIndex(EP_CHPriceLevelExpensive)))
+// Günstigste zusammenhängende Stunden
+#define ParamEP_CHCheapestWindowHours               (knx.paramByte(EP_ParamCalcIndex(EP_CHCheapestWindowHours)))
+
+// deprecated
+#define EP_KoOffset 1497
+
+// Communication objects per channel (multiple occurrence)
+#define EP_KoBlockOffset 1497
+#define EP_KoBlockSize 7
+
+#define EP_KoCalcNumber(index) (index + EP_KoBlockOffset + _channelIndex * EP_KoBlockSize)
+#define EP_KoCalcIndex(number) ((number >= EP_KoCalcNumber(0) && number < EP_KoCalcNumber(EP_KoBlockSize)) ? (number - EP_KoBlockOffset) % EP_KoBlockSize : -1)
+#define EP_KoCalcChannel(number) ((number >= EP_KoBlockOffset && number < EP_KoBlockOffset + EP_ChannelCount * EP_KoBlockSize) ? (number - EP_KoBlockOffset) / EP_KoBlockSize : -1)
+
+#define EP_KoCHCurrentPrice 0
+#define EP_KoCHAvgPriceToday 1
+#define EP_KoCHMinPriceToday 2
+#define EP_KoCHMaxPriceToday 3
+#define EP_KoCHPriceLevel 4
+#define EP_KoCHTomorrowAvailable 5
+#define EP_KoCHCheapestWindowStart 6
+
+// 
+#define KoEP_CHCurrentPrice                      (knx.getGroupObject(EP_KoCalcNumber(EP_KoCHCurrentPrice)))
+// 
+#define KoEP_CHAvgPriceToday                     (knx.getGroupObject(EP_KoCalcNumber(EP_KoCHAvgPriceToday)))
+// 
+#define KoEP_CHMinPriceToday                     (knx.getGroupObject(EP_KoCalcNumber(EP_KoCHMinPriceToday)))
+// 
+#define KoEP_CHMaxPriceToday                     (knx.getGroupObject(EP_KoCalcNumber(EP_KoCHMaxPriceToday)))
+// 
+#define KoEP_CHPriceLevel                        (knx.getGroupObject(EP_KoCalcNumber(EP_KoCHPriceLevel)))
+// 
+#define KoEP_CHTomorrowAvailable                 (knx.getGroupObject(EP_KoCalcNumber(EP_KoCHTomorrowAvailable)))
+// 
+#define KoEP_CHCheapestWindowStart               (knx.getGroupObject(EP_KoCalcNumber(EP_KoCHCheapestWindowStart)))
+
+#define PVF_VisibleChannels                     9303      // uint8_t
+
+// Verfügbare Kanäle
+#define ParamPVF_VisibleChannels                     (knx.paramByte(PVF_VisibleChannels))
+
+#define PVF_KoRefreshData 1518
+
+// PV-Prognose aktualisieren
+#define KoPVF_RefreshData                         (knx.getGroupObject(PVF_KoRefreshData))
+
+#define PVF_ChannelCount 3
+
+// Parameter per channel
+#define PVF_ParamBlockOffset 9304
+#define PVF_ParamBlockSize 11
+#define PVF_ParamCalcIndex(index) (index + PVF_ParamBlockOffset + _channelIndex * PVF_ParamBlockSize)
+
+#define PVF_CHProviderType                       0      // 8 Bits, Bit 7-0
+#define PVF_CHRefreshInterval                    1      // 8 Bits, Bit 7-0
+#define PVF_CHLatitude                           2      // int16_t
+#define PVF_CHLongitude                          4      // int16_t
+#define PVF_CHTilt                               6      // uint8_t
+#define PVF_CHAzimuth                            7      // int16_t
+#define PVF_CHPeakPower                          9      // uint16_t
+
+// Prognose-Anbieter
+#define ParamPVF_CHProviderType                      (knx.paramByte(PVF_ParamCalcIndex(PVF_CHProviderType)))
+// Automatische Aktualisierung
+#define ParamPVF_CHRefreshInterval                   (knx.paramByte(PVF_ParamCalcIndex(PVF_CHRefreshInterval)))
+// Breitengrad (× 100)
+#define ParamPVF_CHLatitude                          ((int16_t)knx.paramWord(PVF_ParamCalcIndex(PVF_CHLatitude)))
+// Längengrad (× 100)
+#define ParamPVF_CHLongitude                         ((int16_t)knx.paramWord(PVF_ParamCalcIndex(PVF_CHLongitude)))
+// Neigungswinkel (0=waagerecht, 90=senkrecht)
+#define ParamPVF_CHTilt                              (knx.paramByte(PVF_ParamCalcIndex(PVF_CHTilt)))
+// Azimut (0=Süd, -90=Ost, 90=West)
+#define ParamPVF_CHAzimuth                           ((int16_t)knx.paramWord(PVF_ParamCalcIndex(PVF_CHAzimuth)))
+// Spitzenleistung (kWp × 100)
+#define ParamPVF_CHPeakPower                         (knx.paramWord(PVF_ParamCalcIndex(PVF_CHPeakPower)))
+
+// deprecated
+#define PVF_KoOffset 1519
+
+// Communication objects per channel (multiple occurrence)
+#define PVF_KoBlockOffset 1519
+#define PVF_KoBlockSize 6
+
+#define PVF_KoCalcNumber(index) (index + PVF_KoBlockOffset + _channelIndex * PVF_KoBlockSize)
+#define PVF_KoCalcIndex(number) ((number >= PVF_KoCalcNumber(0) && number < PVF_KoCalcNumber(PVF_KoBlockSize)) ? (number - PVF_KoBlockOffset) % PVF_KoBlockSize : -1)
+#define PVF_KoCalcChannel(number) ((number >= PVF_KoBlockOffset && number < PVF_KoBlockOffset + PVF_ChannelCount * PVF_KoBlockSize) ? (number - PVF_KoBlockOffset) / PVF_KoBlockSize : -1)
+
+#define PVF_KoCHYieldToday 0
+#define PVF_KoCHYieldTomorrow 1
+#define PVF_KoCHPowerNow 2
+#define PVF_KoCHPowerNextHour 3
+#define PVF_KoCHPeakPowerToday 4
+#define PVF_KoCHPeakTimeToday 5
+
+// 
+#define KoPVF_CHYieldToday                        (knx.getGroupObject(PVF_KoCalcNumber(PVF_KoCHYieldToday)))
+// 
+#define KoPVF_CHYieldTomorrow                     (knx.getGroupObject(PVF_KoCalcNumber(PVF_KoCHYieldTomorrow)))
+// 
+#define KoPVF_CHPowerNow                          (knx.getGroupObject(PVF_KoCalcNumber(PVF_KoCHPowerNow)))
+// 
+#define KoPVF_CHPowerNextHour                     (knx.getGroupObject(PVF_KoCalcNumber(PVF_KoCHPowerNextHour)))
+// 
+#define KoPVF_CHPeakPowerToday                    (knx.getGroupObject(PVF_KoCalcNumber(PVF_KoCHPeakPowerToday)))
+// 
+#define KoPVF_CHPeakTimeToday                     (knx.getGroupObject(PVF_KoCalcNumber(PVF_KoCHPeakTimeToday)))
+
 
 
 // Header generation for Module 'BASE_KommentarModule'
@@ -4827,7 +4983,7 @@
 #define BASE_KommentarModuleModuleParamSize 0
 #define BASE_KommentarModuleSubmodulesParamSize 0
 #define BASE_KommentarModuleParamSize 0
-#define BASE_KommentarModuleParamOffset 9278
+#define BASE_KommentarModuleParamOffset 9337
 #define BASE_KommentarModuleCalcIndex(index, m1) (index + BASE_KommentarModuleParamOffset + _channelIndex * BASE_KommentarModuleCount * BASE_KommentarModuleParamSize + m1 * BASE_KommentarModuleParamSize)
 
 
