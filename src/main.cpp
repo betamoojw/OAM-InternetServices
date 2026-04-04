@@ -11,6 +11,8 @@
 #include "InternetWeatherModule.h"
 #include "SIPModule.h"
 #include "FunctionBlocksModule.h"
+#include "EnergyPriceModule.h"
+#include "PVForecastModule.h"
 #ifdef USE_AUTO_CONNECT
 #include <AutoConnect.h>
 #include <WebServer.h>
@@ -40,6 +42,8 @@ void setup()
     openknx.addModule(7, openknxInternetWeatherModule);
     openknx.addModule(8, openknxSIPModule);
     openknx.addModule(9, openknxFunctionBlocksModule);
+    openknx.addModule(10, openknxEnergyPriceModule);
+    openknx.addModule(11, openknxPVForecastModule);
     openknx.setup();
 #ifdef USE_AUTO_CONNECT
     config.apid ="OpenKNX";
