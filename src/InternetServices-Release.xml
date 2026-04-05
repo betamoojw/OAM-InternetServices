@@ -43,6 +43,24 @@
     <op:verify File="../lib/OFM-InternetWeatherModule/library.json" ModuleVersion="%IW_VerifyVersion%" /> 
   </op:define>
 
+  <op:define prefix="EP" ModuleType="23"
+    share="../lib/OFM-EnergyPriceModule/src/EnergyPriceModule.share.xml"
+    template="../lib/OFM-EnergyPriceModule/src/EnergyPriceModule.templ.xml"
+    NumChannels="3"
+    KoSingleOffset="1496"
+    KoOffset="1497">
+    <op:verify File="../lib/OFM-EnergyPriceModule/library.json" ModuleVersion="%EP_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="PVF" ModuleType="24"
+    share="../lib/OFM-PVForecastModule/src/PVForecastModule.share.xml"
+    template="../lib/OFM-PVForecastModule/src/PVForecastModule.templ.xml"
+    NumChannels="3"
+    KoSingleOffset="1518"
+    KoOffset="1519">
+    <op:verify File="../lib/OFM-PVForecastModule/library.json" ModuleVersion="%PVF_VerifyVersion%" />
+  </op:define>
+
   <op:define prefix="SIP" ModuleType="22"
     share="../lib/OFM-SIPClientModule/src/SIPClientModule.share.xml"
     template="../lib/OFM-SIPClientModule/src/SIPClientModule.templ.xml"
@@ -66,24 +84,6 @@
     NumChannels="15" 
     KoOffset="250">
     <op:verify File="../lib/OFM-FunctionBlocks/library.json" ModuleVersion="%FCB_VerifyVersion%" />
-  </op:define>
-
-  <op:define prefix="EP" ModuleType="23"
-    share="../lib/OFM-EnergyPriceModule/src/EnergyPriceModule.share.xml"
-    template="../lib/OFM-EnergyPriceModule/src/EnergyPriceModule.templ.xml"
-    NumChannels="3"
-    KoSingleOffset="1496"
-    KoOffset="1497">
-    <op:verify File="../lib/OFM-EnergyPriceModule/library.json" ModuleVersion="%EP_VerifyVersion%" />
-  </op:define>
-
-  <op:define prefix="PVF" ModuleType="24"
-    share="../lib/OFM-PVForecastModule/src/PVForecastModule.share.xml"
-    template="../lib/OFM-PVForecastModule/src/PVForecastModule.templ.xml"
-    NumChannels="3"
-    KoSingleOffset="1518"
-    KoOffset="1519">
-    <op:verify File="../lib/OFM-PVForecastModule/library.json" ModuleVersion="%PVF_VerifyVersion%" />
   </op:define>
 
   <generate />
