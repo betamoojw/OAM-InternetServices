@@ -39,8 +39,8 @@ if (!$?) { exit 1 }
 
 
 
-#../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_ETH firmware-InternetServices-REG1-ETH uf2
-# if (!$?) { exit 1 }
+../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_ETH firmware-InternetServices-REG1-ETH uf2
+if (!$?) { exit 1 }
 
  ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_LAN_TP_BASE firmware-InternetServices-REG1-LAN-TP-Base esp32
  if (!$?) { exit 1 }
@@ -48,8 +48,8 @@ if (!$?) { exit 1 }
  #../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_REG1_LAN_BASE firmware-InternetServices-REG1-LAN-Base esp32
  #if (!$?) { exit 1 }
 
- #../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_TP firmware-InternetServices-Adafruit_Feather_ESP32_V2_TP esp32
- #if (!$?) { exit 1 }
+ ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_TP firmware-InternetServices-Adafruit_Feather_ESP32_V2_TP esp32
+ if (!$?) { exit 1 }
 
  #../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_Adafruit_Feather_ESP32_V2_IP firmware-InternetServices-Adafruit_Feather_ESP32_V2_IP esp32
  #if (!$?) { exit 1 }
