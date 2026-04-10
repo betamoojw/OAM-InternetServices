@@ -4,6 +4,8 @@ Die Anwendung stellt Daten aus dem Internet auf dem KNX Bus zur Verfügung:
 
 - Internet Wetter Dienst
 - Anruf eine Rufnummer über SIP (keine Audioverbindung)
+- Aktuellen Strompreis 
+- PV-Ertragsprognose
 
 ## Anwendungsdokumentation
 
@@ -12,6 +14,8 @@ Die detaillierte Beschreibungen der Anwendung ist in folgenden Abschnitten zu fi
 - [OpenKNX Applikationsbeschreibung](https://github.com/OpenKNX/OGM-Common/blob/v1/doc/Applikationsbeschreibung-Common.md)
 - [Konfigurationstransfer](https://github.com/OpenKNX/OFM-ConfigTransfer/blob/v1/doc/Applikationsbeschreibung-ConfigTransfer.md)
 - [Internet Wetter](https://github.com/OpenKNX/OFM-InternetWeatherModule) - Bereitstellung von Wetterdaten aus dem Internet
+- [Strompreis](https://github.com/OpenKNX/OFM-EnergyPriceModule/blob/v1/doc/Applikationsbeschreibung-EnergyPrice.md) - Liefert den aktuellen Strompreis
+- [PV-Prognose](https://github.com/OpenKNX/OFM-PVForecastModule/blob/v1dev/doc/Applikationsbeschreibung-PVForecast.md) - Liefert eine solarbasierte Ertragsprognose 
 - [SIP Client](https://github.com/OpenKNX/OFM-SIPClientModule) - Auslösen von Telefonanrufen (ohne Sprachverbindung)
 - [Logikmodule](https://github.com/OpenKNX/OFM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md)
 - [Funktionsblöcke](https://github.com/mgeramb/OFM-FunctionBlocks/blob/v1/doc/Applikationsbeschreibung-FunctionBlocks.md)
