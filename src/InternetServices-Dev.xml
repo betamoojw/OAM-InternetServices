@@ -7,8 +7,8 @@
   <op:ETS
     OpenKnxId="0xAE"
     ApplicationNumber="0x2D"
-    ApplicationVersion="2.1.0"
-    ReplacesVersions="2.0 1.9 1.8 1.7 1.6 1.5 1.4 1.3 1.2 1.1 1.0 0.15 0.14 0.13 0.12 0.11 0.10 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1 0.0"
+    ApplicationVersion="2.3.0"
+    ReplacesVersions="2.2 2.1 2.0 1.9 1.8 1.7 1.6 1.5 1.4 1.3 1.2 1.1 1.0 0.15 0.14 0.13 0.12 0.11 0.10 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1 0.0"
     ApplicationRevision="0"
     ProductName="Internet Dienste"
     BusCurrent="30"
@@ -59,6 +59,14 @@
     <op:verify File="../lib/OFM-PVForecastModule/library.json" ModuleVersion="%PVF_VerifyVersion%" />
   </op:define>
 
+  <op:define prefix="NTB" ModuleType="25"
+    share="../lib/OFM-NetworkBridge/src/NetworkBridge.share.xml"
+    template="../lib/OFM-NetworkBridge/src/NetworkBridge.templ.xml"
+    NumChannels="20"
+    KoOffset="1700">
+    <op:verify File="../lib/OFM-NetworkBridge/library.json" ModuleVersion="%NTB_VerifyVersion%" />
+  </op:define>
+
   <op:define prefix="SIP" ModuleType="22"
     share="../lib/OFM-SIPClientModule/src/SIPClientModule.share.xml"
     template="../lib/OFM-SIPClientModule/src/SIPClientModule.templ.xml"
@@ -83,6 +91,8 @@
     KoOffset="250">
     <op:verify File="../lib/OFM-FunctionBlocks/library.json" ModuleVersion="%FCB_VerifyVersion%" />
   </op:define>
+
+  
 
   <generate />
 </KNX>

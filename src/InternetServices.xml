@@ -60,6 +60,14 @@
     <op:verify File="../lib/OFM-PVForecastModule/library.json" ModuleVersion="%PVF_VerifyVersion%" />
   </op:define>
 
+  <op:define prefix="NTB" ModuleType="25"
+    share="../lib/OFM-NetworkBridge/src/NetworkBridge.share.xml"
+    template="../lib/OFM-NetworkBridge/src/NetworkBridge.templ.xml"
+    NumChannels="20"
+    KoOffset="1700">
+    <op:verify File="../lib/OFM-NetworkBridge/library.json" ModuleVersion="%NTB_VerifyVersion%" />
+  </op:define>
+  
   <op:define prefix="SIP" ModuleType="22"
     share="../lib/OFM-SIPClientModule/src/SIPClientModule.share.xml"
     template="../lib/OFM-SIPClientModule/src/SIPClientModule.templ.xml"
