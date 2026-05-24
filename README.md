@@ -36,3 +36,37 @@ Die vorkompilierte Firmware unterstützt:
 ## Lizenz
 
 Diese Software steht unter der [GNU GPL v3](LICENSE).
+
+## Release Notes Workflow
+
+### Modul Release Notes
+
+Jedes Projekt unter `lib/` enthaelt eine `release_notes.md` im maschinenlesbaren Format:
+
+- `## <version>`
+- `### Breaking Changes`
+- `### Feature`
+- `### Bug`
+
+Die Reihenfolge innerhalb jedes Versionskapitels ist verbindlich: zuerst `Breaking Changes`, dann `Feature`, dann `Bug`.
+
+### Dependencies mit Modulversion
+
+Das Script `lib/OGM-Common/scripts/setup/reusable/Build-Dependencies.ps1` schreibt zusaetzlich die Modulversion aus `library.json` in jede Zeile der `dependencies.txt`.
+
+### Aggregierte Gesamtrelease Notes
+
+Das Script `scripts/Generate-Aggregated-ReleaseNotes.ps1` erzeugt Gesamtrelease Notes aus zwei Snapshots der `dependencies.txt`:
+
+```powershell
+pwsh scripts/Generate-Aggregated-ReleaseNotes.ps1 \
+	-OldDependenciesFile dependencies_old.txt \
+	-NewDependenciesFile dependencies_new.txt
+```
+
+Standardausgabe:
+
+- `release/release_notes.md`
+- `RELEASE_NOTES.md`
+
+Die vollstaendige Historie dieses Repositories liegt in [RELEASE_NOTES.md](RELEASE_NOTES.md).

@@ -16,3 +16,8 @@ Die Smart Home Bridge besteht aus folgenden Modulen:
 - [SIP Client](https://github.com/OpenKNX/OFM-SIPClientModule)
 - [Logikmodule](https://github.com/OpenKNX/OFM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md)
 - [Funktionsblöcke](https://github.com/mgeramb/OFM-FunctionBlocks/blob/v1/doc/Applikationsbeschreibung-FunctionBlocks.md)
+
+## Architekturhinweis Internet Wetter
+
+Das InternetWeather-Modul arbeitet im aktuellen Stand kanalbasiert mit einem einzelnen Zielwert pro Kanal.
+Die interne Provider-Anfrage erfolgt über eine Request-Liste der benötigten Werte, damit nur erforderliche Wetterdaten angefragt und befüllt werden.

@@ -229,11 +229,33 @@ function ProcessDependencies($DependenciesFile) {
   $dependedProjects = foreach ($line in $dependencies) {
     $lineNumber++
     if ($line -notmatch '^-------' -and -not $line.StartsWith('#')) {
-      $parts = $line -split ' ', 4
+      $parts = $line -split ' ', 5
       if ($parts.Count -lt 4) {
         if($Verbose) { Write-Host -ForegroundColor DarkYellow "Dependencies: Error on line ${lineNumber}: Line does not have the expected format and will be skipped: $line" }
       } else {
-        $hash, $branch, $folders, $urlParts = $parts
+        $hash = $parts[0]
+        $libraryVersion = ""
+
+        if ($parts.Count -eq 4) {
+          # Legacy format without version: hash branch folder url
+          $branch = $parts[1]
+          $folders = $parts[2]
+          $urlParts = $parts[3]
+        } elseif ($parts.Count -ge 5) {
+          # New format: hash version branch folder url
+          if ($parts[3] -match '^lib/') {
+            $libraryVersion = $parts[1]
+            $branch = $parts[2]
+            $folders = $parts[3]
+            $urlParts = $parts[4]
+          } else {
+            # Backward compatible fallback to previous new format: hash branch version folder url
+            $branch = $parts[1]
+            $libraryVersion = $parts[2]
+            $folders = $parts[3]
+            $urlParts = $parts[4]
+          }
+        }
         $folders = $folders -split '/'
         $urlParts = $urlParts -split '#'
         $url = $urlParts[0]
@@ -259,6 +281,7 @@ function ProcessDependencies($DependenciesFile) {
           "Folder" = $folders
           "FolderCount" = $folders.Count
           "URL" = $url
+          "LibraryVersion" = $libraryVersion
           "ProjectName" = $projectName
         }
       }

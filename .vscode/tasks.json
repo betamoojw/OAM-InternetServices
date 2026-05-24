@@ -116,6 +116,19 @@
             ],
             "problemMatcher": [],
             "group": "test"
+        },
+        {
+            "label": "Generate Aggregated Release Notes",
+            "type": "shell",
+            "command": "scripts/Generate-Aggregated-ReleaseNotes.ps1",
+            "args": [
+                "-OldDependenciesFile",
+                "dependencies.txt",
+                "-NewDependenciesFile",
+                "dependencies.txt"
+            ],
+            "problemMatcher": [],
+            "group": "test"
         }
 	]
 }
