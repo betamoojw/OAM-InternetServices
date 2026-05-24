@@ -1,15 +1,15 @@
 ------- Built with -------
-256eade 2.3.1 v1dev-releasenotes lib/knx https://github.com/OpenKNX/knx.git
-a30cf4b 0.5.0 v1dev-releasenotes lib/OFM-ConfigTransfer https://github.com/OpenKNX/OFM-ConfigTransfer.git
-b8cd083 0.1.0 v1dev-releasenotes lib/OFM-EnergyPriceModule https://github.com/OpenKNX/OFM-EnergyPriceModule.git
-85911c2 0.1.5 v1dev-releasenotes lib/OFM-FileTransferModule https://github.com/OpenKNX/OFM-FileTransferModule.git
-b898f12 0.10.0 v1dev lib/OFM-FunctionBlocks https://github.com/OpenKNX/OFM-FunctionBlocks.git
-765b3ae 0.5.0 v1dev-SingleKOChannels lib/OFM-InternetWeatherModule https://github.com/OpenKNX/OFM-InternetWeatherModule.git
-0a62c81 4.3.0 v1-releasenotes lib/OFM-LogicModule https://github.com/OpenKNX/OFM-LogicModule.git
-49f1001 0.6.0 v1dev-releasenotes lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
-b092d80 0.1.0 v1 lib/OFM-NetworkBridge https://github.com/OpenKNX/OFM-NetworkBridge.git
-cec8c5a 0.1.0 v1dev-releasenotes lib/OFM-PVForecastModule https://github.com/OpenKNX/OFM-PVForecastModule.git
-52f7624 0.3.0 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule.git
-723dea8 0.0.2 v1dev-releasenotes lib/OFM-UsbExchange https://github.com/OpenKNX/OFM-UsbExchange.git
-8aa7d77 1.8.1 v1dev-releaseNotes lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
-b38724d 1.0.0 v1dev lib/OGM-HardwareConfig https://github.com/OpenKNX/OGM-HardwareConfig.git
+7124a64 v1 lib/knx https://github.com/OpenKNX/knx.git
+eca6977 v1 lib/OFM-ConfigTransfer https://github.com/OpenKNX/OFM-ConfigTransfer.git
+c35b21e v1dev lib/OFM-EnergyPriceModule https://github.com/OpenKNX/OFM-EnergyPriceModule.git
+178f186 v1 lib/OFM-FileTransferModule https://github.com/OpenKNX/OFM-FileTransferModule.git
+e8ec058 v1 lib/OFM-FunctionBlocks https://github.com/OpenKNX/OFM-FunctionBlocks.git
+2ae3b2e v1 lib/OFM-InternetWeatherModule https://github.com/OpenKNX/OFM-InternetWeatherModule.git
+45e2159 v1 lib/OFM-LogicModule https://github.com/OpenKNX/OFM-LogicModule.git
+1b1dfed v1dev-hotshit lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
+b092d80 v1 lib/OFM-NetworkBridge https://github.com/OpenKNX/OFM-NetworkBridge.git
+b7880d9 v1 lib/OFM-PVForecastModule https://github.com/OpenKNX/OFM-PVForecastModule.git
+52f7624 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule.git
+55119fc v1 lib/OFM-UsbExchange https://github.com/OpenKNX/OFM-UsbExchange.git
+9e6e57a v1dev-webconsole lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
+a9e034d v1 lib/OGM-HardwareConfig https://github.com/OpenKNX/OGM-HardwareConfig.git
