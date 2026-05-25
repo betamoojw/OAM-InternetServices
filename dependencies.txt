@@ -6,7 +6,7 @@ c35b21e v1dev lib/OFM-EnergyPriceModule https://github.com/OpenKNX/OFM-EnergyPri
 e8ec058 v1 lib/OFM-FunctionBlocks https://github.com/OpenKNX/OFM-FunctionBlocks.git
 2ae3b2e v1 lib/OFM-InternetWeatherModule https://github.com/OpenKNX/OFM-InternetWeatherModule.git
 45e2159 v1 lib/OFM-LogicModule https://github.com/OpenKNX/OFM-LogicModule.git
-1b1dfed v1dev-hotshit lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
+c16a9dc v1dev-hotshit-beta lib/OFM-Network https://github.com/OpenKNX/OFM-Network.git
 b092d80 v1 lib/OFM-NetworkBridge https://github.com/OpenKNX/OFM-NetworkBridge.git
 b7880d9 v1 lib/OFM-PVForecastModule https://github.com/OpenKNX/OFM-PVForecastModule.git
 52f7624 v1 lib/OFM-SIPClientModule https://github.com/OpenKNX/OFM-SIPClientModule.git

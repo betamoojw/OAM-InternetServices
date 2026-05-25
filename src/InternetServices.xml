@@ -4,6 +4,9 @@
   
   <op:config href="InternetServices.conf.xml" />
 
+<!-- Do not use 99 for ModuleType --> 
+<!-- %AID%_UP-9900032_R-990003201 is used for BETA Test of HTTP Service -->
+
   <op:ETS
     OpenKnxId="0xAE"
     ApplicationNumber="0x2E"

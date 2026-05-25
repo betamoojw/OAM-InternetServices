@@ -19,10 +19,10 @@
 #define ETS_ModuleId_SIP 8
 #define ETS_ModuleId_LOG 9
 #define ETS_ModuleId_FCB 10
-#define MAIN_FirmwareName "Internet Dienste (Beta)"
+#define MAIN_FirmwareName "Internet Dienste"
 #define MAIN_OpenKnxId 0xAE
 #define MAIN_ApplicationNumber 46
-#define MAIN_ApplicationVersion 21
+#define MAIN_ApplicationVersion 22
 #define MAIN_FirmwareRevision 0
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 9885
@@ -288,7 +288,7 @@
 #define ParamNET_StaticIP                            ((bool)(knx.paramByte(NET_StaticIP) & NET_StaticIPMask))
 // mDNS
 #define ParamNET_mDNS                                ((bool)(knx.paramByte(NET_mDNS) & NET_mDNSMask))
-// Weberver
+// Weberver (BETA)
 #define ParamNET_HTTP                                ((bool)(knx.paramByte(NET_HTTP) & NET_HTTPMask))
 // NTP-Client
 #define ParamNET_NTP                                 ((bool)(knx.paramByte(NET_NTP) & NET_NTPMask))
@@ -765,7 +765,7 @@
 // Verfügbare Kanäle
 #define ParamEP_VisibleChannels                     (knx.paramByte(EP_VisibleChannels))
 
-#define EP_KoRefreshData 1510
+#define EP_KoRefreshData 1496
 
 // Strompreis aktualisieren
 #define KoEP_RefreshData                         (knx.getGroupObject(EP_KoRefreshData))
@@ -801,10 +801,10 @@
 #define ParamEP_CHCheapestWindowHours               (knx.paramByte(EP_ParamCalcIndex(EP_CHCheapestWindowHours)))
 
 // deprecated
-#define EP_KoOffset 1520
+#define EP_KoOffset 1497
 
 // Communication objects per channel (multiple occurrence)
-#define EP_KoBlockOffset 1520
+#define EP_KoBlockOffset 1497
 #define EP_KoBlockSize 7
 
 #define EP_KoCalcNumber(index) (index + EP_KoBlockOffset + _channelIndex * EP_KoBlockSize)
@@ -839,7 +839,7 @@
 // Verfügbare Kanäle
 #define ParamPVF_VisibleChannels                     (knx.paramByte(PVF_VisibleChannels))
 
-#define PVF_KoRefreshData 1544
+#define PVF_KoRefreshData 1518
 
 // PV-Prognose aktualisieren
 #define KoPVF_RefreshData                         (knx.getGroupObject(PVF_KoRefreshData))
@@ -890,10 +890,10 @@
 #define ParamPVF_CHSolcastSiteIdStr                  (knx.paramString(PVF_ParamCalcIndex(PVF_CHSolcastSiteId), PVF_CHSolcastSiteIdLength))
 
 // deprecated
-#define PVF_KoOffset 1550
+#define PVF_KoOffset 1519
 
 // Communication objects per channel (multiple occurrence)
-#define PVF_KoBlockOffset 1550
+#define PVF_KoBlockOffset 1519
 #define PVF_KoBlockSize 6
 
 #define PVF_KoCalcNumber(index) (index + PVF_KoBlockOffset + _channelIndex * PVF_KoBlockSize)
